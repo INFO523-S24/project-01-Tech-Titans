@@ -1,4 +1,5 @@
 # project-01
+## Tech Titans
 
 Project 1 repo for INFO 523 - Spring 2024.
 
