@@ -23,6 +23,10 @@ A brief description of your dataset including its provenance, dimensions, etc. a
 
 Make sure to load the data and use inline code for some of this information.
 
+## Reason for Choosing This Dataset
+
+We chose this dataset for its potential to provide valuable insights into the stock market behavior of big tech companies. The dataset encompasses a range of data types, including numerical values like stock prices and trading volumes and categorical data such as company names and dates. This composition enables a comprehensive examination of stock market trends, facilitates comparisons across various companies, and aids in assessing the influence of significant external events on stock valuations.
+
 ## Questions
 
 The two questions you want to answer.
