@@ -10,7 +10,7 @@ The website is created using [Quarto](https://quarto.org/docs/websites/). The .q
 ### 020424
 - Decided our two questions
   * How do stock prices change over time, looking at the basic information like open, close, high, low etc.
-  * Backwards verification: if we invested x amount of dollars in 1990, how much would it be worth today, when would be a good/bad time to pull investment out of the market
+  * Backwards verification: if we invested x amount of dollars at the start of 2010, how much would it be worth at the end of 2022, when would be a good/bad time to pull investment out of the market
 - Split the work up to ensure everyone commits to the proposal.qmd
 - Try to ensure everyone is in group meetings moving forward to improve communications
 
