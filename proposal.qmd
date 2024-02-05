@@ -27,6 +27,9 @@ Make sure to load the data and use inline code for some of this information.
 
 The two questions you want to answer.
 
+- How do stock prices change over time, looking at the basic information like open, close, high, low etc.
+- Backwards verification: if we invested x amount of dollars in 1990, how much would it be worth today, when would be a good/bad time to pull investment out of the market
+
 ## Analysis plan
 
 -   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
