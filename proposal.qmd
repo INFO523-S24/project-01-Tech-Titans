@@ -46,4 +46,4 @@ The two questions you want to answer.
 
 ## Analysis plan
 
--   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+Analyzing stock prices from Big Tech Stock Price dataset over time using open, close, high, and low values. Creating visualizations like candlestick charts, line plots and bar plots to gain insights into the stock's behavior. Bar plot depicts the volume of the stock which implies that taller the bar higher the stock trade. Each day has a total of 8 variables.
