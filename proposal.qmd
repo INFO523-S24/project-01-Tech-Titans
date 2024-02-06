@@ -19,7 +19,8 @@ import numpy as np
 #| message: false
 ```
 
-This dataset, "Big Tech Stock Prices," sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent technology companies. The dataset comprises the daily stock prices and volume of 14 different tech companies, including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more.
+
+This dataset, "Big Tech Stock Prices," sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent 14 technology companies including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more..
 
 There are 2 CSV files in the dataset:
 
