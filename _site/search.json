@@ -11,14 +11,14 @@
     "href": "proposal.html#dataset",
     "title": "Proposal title",
     "section": "Dataset",
-    "text": "Dataset\nA brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.\nMake sure to load the data and use inline code for some of this information."
+    "text": "Dataset\nThis dataset, “Big Tech Stock Prices,” sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent technology companies. The dataset comprises the daily stock prices and volume of 14 different tech companies, including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more.\nThere are 2 CSV files in the dataset:\nbig_tech_stock_prices.csv: This includes stock market data for various big tech companies. Key variables such as stock_symbol, date, open, high, low, close, adj_close, and volume offer insights into daily stock performance.\nbig_tech_companies.csv: This data focuses on the major technology companies represented in the stock prices dataset. It features variables like stock_symbol and company, providing the stock symbols and full names of the corresponding companies\nMake sure to load the data and use inline code for some of this information."
   },
   {
     "objectID": "proposal.html#questions",
     "href": "proposal.html#questions",
     "title": "Proposal title",
     "section": "Questions",
-    "text": "Questions\nThe two questions you want to answer."
+    "text": "Questions\nThe two questions you want to answer.\n\nHow do stock prices change over time, looking at the basic information like open, close, high, low etc.\nBackwards verification: if we invested x amount of dollars in 1990, how much would it be worth today, when would be a good/bad time to pull investment out of the market"
   },
   {
     "objectID": "proposal.html#analysis-plan",
@@ -45,22 +45,22 @@
     "objectID": "presentation.html#quarto",
     "href": "presentation.html#quarto",
     "title": "Project title",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+    "section": "",
+    "text": "The presentation is created using the Quarto CLI\n## sets the start of a new slide"
   },
   {
     "objectID": "presentation.html#layouts",
     "href": "presentation.html#layouts",
     "title": "Project title",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+    "section": "",
+    "text": "You can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis"
   },
   {
     "objectID": "presentation.html#code",
     "href": "presentation.html#code",
     "title": "Project title",
-    "section": "Code",
-    "text": "Code\n\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Tue, 05 Dec 2023   Prob (F-statistic):           5.84e-08\nTime:                        15:17:43   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
+    "section": "",
+    "text": "OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Tue, 05 Dec 2023   Prob (F-statistic):           5.84e-08\nTime:                        15:17:43   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified."
   },
   {
     "objectID": "presentation.html#plots",
@@ -73,22 +73,22 @@
     "objectID": "presentation.html#plot-and-text",
     "href": "presentation.html#plot-and-text",
     "title": "Project title",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
+    "section": "",
+    "text": "Some text\ngoes here"
   },
   {
     "objectID": "presentation.html#tables",
     "href": "presentation.html#tables",
     "title": "Project title",
     "section": "Tables",
-    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\n\n\n\nisland\n\n\n\nbill_length_mm\n\n\n\nbill_depth_mm\n\n\n\nflipper_length_mm\n\n\n\nbody_mass_g\n\n\n\nsex\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.1\n\n\n\n18.7\n\n\n\n181.0\n\n\n\n3750.0\n\n\n\nMale\n\n\n\n\n\n\n\n1\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.5\n\n\n\n17.4\n\n\n\n186.0\n\n\n\n3800.0\n\n\n\nFemale\n\n\n\n\n\n\n\n2\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n40.3\n\n\n\n18.0\n\n\n\n195.0\n\n\n\n3250.0\n\n\n\nFemale\n\n\n\n\n\n\n\n4\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n36.7\n\n\n\n19.3\n\n\n\n193.0\n\n\n\n3450.0\n\n\n\nFemale\n\n\n\n\n\n\n\n5\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.3\n\n\n\n20.6\n\n\n\n190.0\n\n\n\n3650.0\n\n\n\nMale"
+    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\n\n\n\nisland\n\n\n\nbill_length_mm\n\n\n\nbill_depth_mm\n\n\n\nflipper_length_mm\n\n\n\nbody_mass_g\n\n\n\nsex\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.1\n\n\n\n18.7\n\n\n\n181.0\n\n\n\n3750.0\n\n\n\nMale\n\n\n\n\n\n\n\n1\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.5\n\n\n\n17.4\n\n\n\n186.0\n\n\n\n3800.0\n\n\n\nFemale\n\n\n\n\n\n\n\n2\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n40.3\n\n\n\n18.0\n\n\n\n195.0\n\n\n\n3250.0\n\n\n\nFemale\n\n\n\n\n\n\n\n4\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n36.7\n\n\n\n19.3\n\n\n\n193.0\n\n\n\n3450.0\n\n\n\nFemale\n\n\n\n\n\n\n\n5\n\n\n\nAdelie\n\n\n\nTorgersen\n\n\n\n39.3\n\n\n\n20.6\n\n\n\n190.0\n\n\n\n3650.0\n\n\n\nMale"
   },
   {
     "objectID": "presentation.html#images",
     "href": "presentation.html#images",
     "title": "Project title",
     "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
+    "text": "Images\n\n\n\nImage credit: Danielle Navarro, Percolate."
   },
   {
     "objectID": "presentation.html#math-expressions",
@@ -110,5 +110,26 @@
     "title": "About",
     "section": "",
     "text": "This project was developed by [Team Name] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.)."
+  },
+  {
+    "objectID": "proposal.html#reason-for-choosing-this-dataset",
+    "href": "proposal.html#reason-for-choosing-this-dataset",
+    "title": "Proposal title",
+    "section": "Reason for Choosing This Dataset",
+    "text": "Reason for Choosing This Dataset\nWe chose this dataset for its potential to provide valuable insights into the stock market behavior of big tech companies. The dataset encompasses a range of data types, including numerical values like stock prices and trading volumes and categorical data such as company names and dates. This composition enables a comprehensive examination of stock market trends, facilitates comparisons across various companies, and aids in assessing the influence of significant external events on stock valuations."
+  },
+  {
+    "objectID": "presentation.html",
+    "href": "presentation.html",
+    "title": "Project title",
+    "section": "",
+    "text": "The presentation is created using the Quarto CLI\n## sets the start of a new slide\n\n\n\n\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\n\n\n\n\n\n                            OLS Regression Results                            \n==============================================================================\nDep. Variable:                    mpg   R-squared:                       0.073\nModel:                            OLS   Adj. R-squared:                  0.070\nMethod:                 Least Squares   F-statistic:                     30.59\nDate:                Tue, 05 Dec 2023   Prob (F-statistic):           5.84e-08\nTime:                        15:17:43   Log-Likelihood:                -1346.4\nNo. Observations:                 392   AIC:                             2697.\nDf Residuals:                     390   BIC:                             2705.\nDf Model:                           1                                         \nCovariance Type:            nonrobust                                         \n==============================================================================\n                 coef    std err          t      P&gt;|t|      [0.025      0.975]\n------------------------------------------------------------------------------\nconst         35.8015      2.266     15.800      0.000      31.347      40.257\nspeed       -354.7055     64.129     -5.531      0.000    -480.788    -228.623\n==============================================================================\nOmnibus:                       27.687   Durbin-Watson:                   0.589\nProb(Omnibus):                  0.000   Jarque-Bera (JB):               18.976\nSkew:                           0.420   Prob(JB):                     7.57e-05\nKurtosis:                       2.323   Cond. No.                         169.\n==============================================================================\n\nNotes:\n[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSome text\ngoes here"
+  },
+  {
+    "objectID": "presentation.html#footnotes",
+    "href": "presentation.html#footnotes",
+    "title": "Project title",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAnd add footnotes↩︎"
   }
 ]
