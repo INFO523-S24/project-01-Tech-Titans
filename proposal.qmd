@@ -1,5 +1,5 @@
 ---
-title: "Proposal title"
+title: "Big tech stock prices"
 subtitle: "Proposal"
 format: html
 editor: visual
