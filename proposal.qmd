@@ -52,11 +52,16 @@ Q2:  Backwards verification: if we invested x amount of dollars in 2010, how muc
 ### Q1
 Analyzing stock prices from Big Tech Stock Price dataset over time using open, close, high, and low values. Creating visualizations like candlestick charts, line plots and bar plots to gain insights into the stock's behavior. Bar plot depicts the volume of the stock which implies that taller the bar higher the stock trade. Each day has a total of 8 variables.
 
+#### Analysis
+We plan to answer question one by investigating the rate of change of trading volume and average price over time to find trends that reveal good times to invest, i.e. when stock prices are about to grow exponentially, we would invest our money. Inversely, if we saw an exponential decrease in price over time, we would want to take our money out ASAP.
+
 ### Q2
-To determine the value of an investment in 2022 based on an initial investment in 2010, we need to know the annual rate of return of the investment over that time period. Without this information, it's impossible to calculate the exact value of the investment in 2022.
+To determine the value of an investment in 2022 based on an initial investment in 2010, we need to know the annual rate of return of the investment over that time period. Without this information, it's impossible to calculate the exact value of the investment in 2022. 
 
 However, we can make some generalizations:
 
 1.Using Historical Market Data
 
 2.Consulting Financial Professionals
+#### Analysis
+We will use linear regression to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return.
