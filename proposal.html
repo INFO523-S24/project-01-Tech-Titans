@@ -211,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This dataset, “Big Tech Stock Prices,” sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent 14 technology companies including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more..</p>
 <p>There are 2 CSV files in the dataset:</p>
 <p>big_tech_stock_prices.csv: This file comprises 45,087 observations across 8 variables, encompassing stock market data for 14 major technology companies. Key variables within the dataset include stock_symbol, date, open, high, low, close, adj_close, and volume, all of which offer insights into daily stock performance</p>
-<div id="eb5cb611" class="cell" data-execution_count="2">
+<div id="b73cbde9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>stocks <span class="op">=</span> pd.read_csv(<span class="st">'data/big_tech_stock_prices.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>stocks.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -295,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>big_tech_companies.csv: This file serves as metadata, providing the names of companies alongside their associated stock symbols.</p>
-<div id="f2a4723d" class="cell" data-execution_count="3">
+<div id="59c23675" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>companies <span class="op">=</span> pd.read_csv(<span class="st">'data/big_tech_companies.csv'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>companies.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -362,9 +362,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
 <section id="variables-involved" class="level3">
 <h3 class="anchored" data-anchor-id="variables-involved">Variables Involved</h3>
-<p>The variables which we use from the Big Tech Companies Dataset are: 1 stock_symbol: The stock symbol representing the technology company on the stock exchange. 2 company: The full name of the technology company.</p>
+<p>The variables which we use from the Big Tech Companies Dataset are: - 1 stock_symbol: The stock symbol representing the technology company on the stock exchange. - 2 company: The full name of the technology company.</p>
 <p>The variables which we use from the Big Tech Stock Prices Dataset are:</p>
-<p>1 stock_symbol: The stock symbol of the technology company, allowing for identification of the company’s stock data. 2 date: The date the stock prices were recorded. 3 open: The price at which the stock first traded upon the exchange opening that day. 4 high: The highest price the stock traded during the trading day. 5 low: The lowest price the stock traded during the trading day. 6 close: The final price the stock traded during the trading day. 7 adj_close: The closing price after adjustments for all applicable splits and dividend distributions. 8 volume: The total number of shares traded during the trading day.</p>
+<ul>
+<li>1 stock_symbol: The stock symbol of the technology company, allowing for identification of the company’s stock data.</li>
+<li>2 date: The date the stock prices were recorded.</li>
+<li>3 open: The price at which the stock first traded upon the exchange opening that day.</li>
+<li>4 high: The highest price the stock traded during the trading day.</li>
+<li>5 low: The lowest price the stock traded during the trading day.</li>
+<li>6 close: The final price the stock traded during the trading day.</li>
+<li>7 adj_close: The closing price after adjustments for all applicable splits and dividend distributions.</li>
+<li>8 volume: The total number of shares traded during the trading day.</li>
+</ul>
 </section>
 <section id="q1" class="level3">
 <h3 class="anchored" data-anchor-id="q1">Q1</h3>
