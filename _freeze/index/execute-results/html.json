@@ -1,7 +1,8 @@
 {
-  "hash": "f20b81bef7d824f9753cc8c7acc4b4bd",
+  "hash": "fa342b68492cef582150780458302749",
   "result": {
-    "markdown": "---\ntitle: Project title\nsubtitle: INFO 523 - Project 1\nauthor: Team name\nformat: html\neditor: visual\n---\n\n## Abstract\n\nAdd project abstract here.\n\n",
+    "engine": "jupyter",
+    "markdown": "---\ntitle: Big Tech Stock Prices\nsubtitle: Analyzing Big Tech stock prices from 2010 to 2022\nauthor: Tech Titans\nformat: html\neditor: visual\n---\n\n## Abstract\n\nAdd project abstract here.\n\n",
     "supporting": [
       "index_files"
     ],

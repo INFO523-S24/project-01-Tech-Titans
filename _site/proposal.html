@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project Title - Proposal title</title>
+<title>Big Tech Stock Prices</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,6 +100,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -112,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Project Title</span>
+    <span class="navbar-title">Big Tech Stock Prices</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -162,8 +165,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
   <li><a href="#reason-for-choosing-this-dataset" id="toc-reason-for-choosing-this-dataset" class="nav-link" data-scroll-target="#reason-for-choosing-this-dataset">Reason for Choosing This Dataset</a></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis plan</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a>
+  <ul class="collapse">
+  <li><a href="#q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc." id="toc-q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc." class="nav-link" data-scroll-target="#q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc."><strong>Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.</strong></a></li>
+  <li><a href="#q2-backwards-verification-if-we-invested-x-amount-of-dollars-in-2010-how-much-would-it-be-worth-in-2022-when-would-be-a-goodbad-time-to-pull-investment-out-of-the-market." id="toc-q2-backwards-verification-if-we-invested-x-amount-of-dollars-in-2010-how-much-would-it-be-worth-in-2022-when-would-be-a-goodbad-time-to-pull-investment-out-of-the-market." class="nav-link" data-scroll-target="#q2-backwards-verification-if-we-invested-x-amount-of-dollars-in-2010-how-much-would-it-be-worth-in-2022-when-would-be-a-goodbad-time-to-pull-investment-out-of-the-market."><strong>Q2: Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.</strong></a></li>
+  </ul></li>
+  <li><a href="#analysis-plan" id="toc-analysis-plan" class="nav-link" data-scroll-target="#analysis-plan">Analysis plan</a>
+  <ul class="collapse">
+  <li><a href="#q1" id="toc-q1" class="nav-link" data-scroll-target="#q1">Q1</a></li>
+  <li><a href="#q2" id="toc-q2" class="nav-link" data-scroll-target="#q2">Q2</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -172,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proposal title</h1>
+<h1 class="title">Big Tech Stock Prices</h1>
 <p class="subtitle lead">Proposal</p>
 </div>
 
@@ -191,14 +202,145 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div id="load-pkgs" class="cell" data-message="false" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
 <p>This dataset, “Big Tech Stock Prices,” sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent 14 technology companies including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more..</p>
 <p>There are 2 CSV files in the dataset:</p>
 <p>big_tech_stock_prices.csv: This file comprises 45,087 observations across 8 variables, encompassing stock market data for 14 major technology companies. Key variables within the dataset include stock_symbol, date, open, high, low, close, adj_close, and volume, all of which offer insights into daily stock performance</p>
+<div id="b0b921e9" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>stocks <span class="op">=</span> pd.read_csv(<span class="st">'data/big_tech_stock_prices.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>stocks.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">stock_symbol</th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">open</th>
+<th data-quarto-table-cell-role="th">high</th>
+<th data-quarto-table-cell-role="th">low</th>
+<th data-quarto-table-cell-role="th">close</th>
+<th data-quarto-table-cell-role="th">adj_close</th>
+<th data-quarto-table-cell-role="th">volume</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>AAPL</td>
+<td>2010-01-04</td>
+<td>7.622500</td>
+<td>7.660714</td>
+<td>7.585000</td>
+<td>7.643214</td>
+<td>6.515213</td>
+<td>493729600</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>AAPL</td>
+<td>2010-01-05</td>
+<td>7.664286</td>
+<td>7.699643</td>
+<td>7.616071</td>
+<td>7.656429</td>
+<td>6.526476</td>
+<td>601904800</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>AAPL</td>
+<td>2010-01-06</td>
+<td>7.656429</td>
+<td>7.686786</td>
+<td>7.526786</td>
+<td>7.534643</td>
+<td>6.422664</td>
+<td>552160000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>AAPL</td>
+<td>2010-01-07</td>
+<td>7.562500</td>
+<td>7.571429</td>
+<td>7.466071</td>
+<td>7.520714</td>
+<td>6.410790</td>
+<td>477131200</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>AAPL</td>
+<td>2010-01-08</td>
+<td>7.510714</td>
+<td>7.571429</td>
+<td>7.466429</td>
+<td>7.570714</td>
+<td>6.453412</td>
+<td>447610800</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 <p>big_tech_companies.csv: This file serves as metadata, providing the names of companies alongside their associated stock symbols.</p>
+<div id="6e12b05c" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>companies <span class="op">=</span> pd.read_csv(<span class="st">'data/big_tech_companies.csv'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>companies.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">stock_symbol</th>
+<th data-quarto-table-cell-role="th">company</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>AAPL</td>
+<td>Apple Inc.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>ADBE</td>
+<td>Adobe Inc.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>AMZN</td>
+<td>Amazon.com, Inc.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>CRM</td>
+<td>Salesforce, Inc.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>CSCO</td>
+<td>Cisco Systems, Inc.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 <p>Make sure to load the data and use inline code for some of this information.</p>
 </section>
 <section id="reason-for-choosing-this-dataset" class="level2">
@@ -208,20 +350,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
 <p>The two questions you want to answer.</p>
-<ul>
-<li>How do stock prices change over time, looking at the basic information like open, close, high, low etc.</li>
-<li>Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market</li>
-</ul>
+<section id="q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc." class="level3">
+<h3 class="anchored" data-anchor-id="q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc."><strong>Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.</strong></h3>
+</section>
+<section id="q2-backwards-verification-if-we-invested-x-amount-of-dollars-in-2010-how-much-would-it-be-worth-in-2022-when-would-be-a-goodbad-time-to-pull-investment-out-of-the-market." class="level3">
+<h3 class="anchored" data-anchor-id="q2-backwards-verification-if-we-invested-x-amount-of-dollars-in-2010-how-much-would-it-be-worth-in-2022-when-would-be-a-goodbad-time-to-pull-investment-out-of-the-market."><strong>Q2: Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.</strong></h3>
+</section>
 </section>
 <section id="analysis-plan" class="level2">
 <h2 class="anchored" data-anchor-id="analysis-plan">Analysis plan</h2>
+<section id="q1" class="level3">
+<h3 class="anchored" data-anchor-id="q1">Q1</h3>
 <p>Analyzing stock prices from Big Tech Stock Price dataset over time using open, close, high, and low values. Creating visualizations like candlestick charts, line plots and bar plots to gain insights into the stock’s behavior. Bar plot depicts the volume of the stock which implies that taller the bar higher the stock trade. Each day has a total of 8 variables.</p>
+<section id="analysis" class="level4">
+<h4 class="anchored" data-anchor-id="analysis">Analysis</h4>
+<p>We plan to answer question one by investigating the rate of change of trading volume and average price over time to find trends that reveal good times to invest, i.e.&nbsp;when stock prices are about to grow exponentially, we would invest our money. Inversely, if we saw an exponential decrease in price over time, we would want to take our money out ASAP.</p>
+</section>
+</section>
+<section id="q2" class="level3">
+<h3 class="anchored" data-anchor-id="q2">Q2</h3>
 <p>To determine the value of an investment in 2022 based on an initial investment in 2010, we need to know the annual rate of return of the investment over that time period. Without this information, it’s impossible to calculate the exact value of the investment in 2022.</p>
 <p>However, we can make some generalizations:</p>
-<p>1.Using Historical Market Data</p>
-<p>2.Consulting Financial Professionals</p>
+<ul>
+<li><p>1.Using Historical Market Data</p></li>
+<li><p>2.Consulting Financial Professionals</p></li>
+</ul>
+<section id="analysis-1" class="level4">
+<h4 class="anchored" data-anchor-id="analysis-1">Analysis</h4>
+<p>We will use DMA(daily moving averages) to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

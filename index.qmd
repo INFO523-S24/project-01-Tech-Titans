@@ -1,7 +1,7 @@
 ---
-title: "Project title"
-subtitle: "INFO 523 - Project 1"
-author: "Team name"
+title: "Big Tech Stock Prices"
+subtitle: "Analyzing Big Tech stock prices from 2010 to 2022"
+author: "Tech Titans"
 format: html
 editor: visual
 jupyter: python3

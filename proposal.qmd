@@ -1,5 +1,5 @@
 ---
-title: "Big tech stock prices"
+title: "Big Tech Stock Prices"
 subtitle: "Proposal"
 format: html
 editor: visual
@@ -43,8 +43,10 @@ We chose this dataset for its potential to provide valuable insights into the st
 
 The two questions you want to answer.
 
-Q1:  How do stock prices change over time, looking at the basic information like open, close, high, low etc.
-Q2:  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market
+
+### **Q1:  How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
+
+### **Q2:  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.**
 
 ## Analysis plan
 
@@ -60,8 +62,9 @@ To determine the value of an investment in 2022 based on an initial investment i
 
 However, we can make some generalizations:
 
-1.Using Historical Market Data
+- 1.Using Historical Market Data
 
-2.Consulting Financial Professionals
+- 2.Consulting Financial Professionals
+
 #### Analysis
-We will use linear regression to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return.
+We will use DMA(daily moving averages) to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return.
