@@ -43,44 +43,28 @@ We chose this dataset for its potential to provide valuable insights into the st
 
 The two questions you want to answer.
 
+### **Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
 
-### **Q1:  How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
-
-### **Q2:  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.**
+### **Q2: Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.**
 
 ## Analysis plan
 
-
 ### Q1
-Analyzing stock prices from Big Tech Stock Price dataset over time using open, close, high, and low values. Creating visualizations like candlestick charts, line plots and bar plots to gain insights into the stock's behavior. Bar plot depicts the volume of the stock which implies that taller the bar higher the stock trade. Each day has a total of 8 variables.
+
+Analyze daily stock price movements over time using open, close, high, and low price data to identify trends and key inflection points. Approach: Basic Trend Analysis: Plot line charts of opening and closing prices over time. Calculate daily trading range and percent change between open and close. Visualize these metrics to identify daily price swings and volatility. Intraday Price Extremes: Overlay high and low price data to identify intraday price extremes. Analyze the difference between daily highs and lows to determine intraday volatility. Utilize candlestick charts to visualize open-close range and high-low range each day. Advanced Statistical Techniques: Apply moving averages to smooth out price data and identify trends. Utilize volatility forecasting models to predict future price movements. Implement change point detection algorithms to identify critical points where price behavior shifted.
 
 #### Analysis
+
 We plan to answer question one by investigating the rate of change of trading volume and average price over time to find trends that reveal good times to invest, i.e. when stock prices are about to grow exponentially, we would invest our money. Inversely, if we saw an exponential decrease in price over time, we would want to take our money out ASAP.
 
 ### Q2
-To determine the value of an investment in 2022 based on an initial investment in 2010, we need to know the annual rate of return of the investment over that time period. Without this information, it's impossible to calculate the exact value of the investment in 2022. 
 
-However, we can make some generalizations:
-
-- 1.Using Historical Market Data
-
-- 2.Consulting Financial Professionals
+Project the 2022 value of a 2010 investment and identify optimal times to withdraw it, considering the unknown annual return rate. Approach: Historical Return Research: Research total returns over 2010-2022 for relevant indexes like S&P 500 and asset classes matching the investment type. Consult financial experts to supplement market data with insights beyond historical performance. Combine these methods to derive an estimated expected return rate. Projection and Sensitivity Analysis: Apply the estimated return rate to project the investment's growth over the 12-year period, determining an approximate 2022 value. Simulate different return scenarios for sensitivity analysis to assess potential variations in the projected value. Identification of Optimal Withdrawal Times: Analyze historical returns year-by-year to identify periods of unusual losses or volatility. If the annual return deviates negatively from expectations, consider it as a potential time to withdraw funds to avoid further losses. Provide context on market conditions to determine if losses were anomalies or signs of downturns.
 
 #### Analysis
+
 We will use DMA(daily moving averages) to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return.
 
-The variables which we use from the Big Tech Companies Dataset are:
-1 stock_symbol: The stock symbol representing the technology company on the stock exchange.
-2 company: The full name of the technology company.
+The variables which we use from the Big Tech Companies Dataset are: 1 stock_symbol: The stock symbol representing the technology company on the stock exchange. 2 company: The full name of the technology company.
 
-The variables which we use from the Big Tech Stock Prices Dataset are:
-1 stock_symbol: The stock symbol of the technology company, allowing for identification of the company's stock data.
-2 date: The date the stock prices were recorded.
-3 open: The price at which the stock first traded upon the exchange opening that day.
-4 high: The highest price the stock traded during the trading day.
-5 low: The lowest price the stock traded during the trading day.
-6 close: The final price the stock traded during the trading day.
-7 adj_close: The closing price after adjustments for all applicable splits and dividend distributions.
-8 volume: The total number of shares traded during the trading day.
-
-
+The variables which we use from the Big Tech Stock Prices Dataset are: 1 stock_symbol: The stock symbol of the technology company, allowing for identification of the company's stock data. 2 date: The date the stock prices were recorded. 3 open: The price at which the stock first traded upon the exchange opening that day. 4 high: The highest price the stock traded during the trading day. 5 low: The lowest price the stock traded during the trading day. 6 close: The final price the stock traded during the trading day. 7 adj_close: The closing price after adjustments for all applicable splits and dividend distributions. 8 volume: The total number of shares traded during the trading day.
