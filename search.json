@@ -1,61 +1,5 @@
 [
   {
-    "objectID": "proposal.html",
-    "href": "proposal.html",
-    "title": "Big Tech Stock Prices",
-    "section": "",
-    "text": "import numpy as np\nimport pandas as pd"
-  },
-  {
-    "objectID": "proposal.html#dataset",
-    "href": "proposal.html#dataset",
-    "title": "Big Tech Stock Prices",
-    "section": "Dataset",
-    "text": "Dataset\nThis dataset, “Big Tech Stock Prices,” sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent 14 technology companies including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more..\nThere are 2 CSV files in the dataset:\nbig_tech_stock_prices.csv: This file comprises 45,087 observations across 8 variables, encompassing stock market data for 14 major technology companies. Key variables within the dataset include stock_symbol, date, open, high, low, close, adj_close, and volume, all of which offer insights into daily stock performance\n\nstocks = pd.read_csv('data/big_tech_stock_prices.csv')\nstocks.head()\n\n\n\n\n\n\n\n\nstock_symbol\ndate\nopen\nhigh\nlow\nclose\nadj_close\nvolume\n\n\n\n\n0\nAAPL\n2010-01-04\n7.622500\n7.660714\n7.585000\n7.643214\n6.515213\n493729600\n\n\n1\nAAPL\n2010-01-05\n7.664286\n7.699643\n7.616071\n7.656429\n6.526476\n601904800\n\n\n2\nAAPL\n2010-01-06\n7.656429\n7.686786\n7.526786\n7.534643\n6.422664\n552160000\n\n\n3\nAAPL\n2010-01-07\n7.562500\n7.571429\n7.466071\n7.520714\n6.410790\n477131200\n\n\n4\nAAPL\n2010-01-08\n7.510714\n7.571429\n7.466429\n7.570714\n6.453412\n447610800\n\n\n\n\n\n\n\nbig_tech_companies.csv: This file serves as metadata, providing the names of companies alongside their associated stock symbols.\n\ncompanies = pd.read_csv('data/big_tech_companies.csv')\ncompanies.head()\n\n\n\n\n\n\n\n\nstock_symbol\ncompany\n\n\n\n\n0\nAAPL\nApple Inc.\n\n\n1\nADBE\nAdobe Inc.\n\n\n2\nAMZN\nAmazon.com, Inc.\n\n\n3\nCRM\nSalesforce, Inc.\n\n\n4\nCSCO\nCisco Systems, Inc.\n\n\n\n\n\n\n\nMake sure to load the data and use inline code for some of this information."
-  },
-  {
-    "objectID": "proposal.html#reason-for-choosing-this-dataset",
-    "href": "proposal.html#reason-for-choosing-this-dataset",
-    "title": "Big Tech Stock Prices",
-    "section": "Reason for Choosing This Dataset",
-    "text": "Reason for Choosing This Dataset\nWe chose this dataset for its potential to provide valuable insights into the stock market behavior of big tech companies. The dataset encompasses a range of data types, including numerical values like stock prices and trading volumes and categorical data such as company names and dates. This composition enables a comprehensive examination of stock market trends, facilitates comparisons across various companies, and aids in assessing the influence of significant external events on stock valuations."
-  },
-  {
-    "objectID": "proposal.html#questions",
-    "href": "proposal.html#questions",
-    "title": "Big Tech Stock Prices",
-    "section": "Questions",
-    "text": "Questions\nThe two questions you want to answer.\n\nQ1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.\n\n\nQ2: Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market."
-  },
-  {
-    "objectID": "proposal.html#analysis-plan",
-    "href": "proposal.html#analysis-plan",
-    "title": "Big Tech Stock Prices",
-    "section": "Analysis plan",
-    "text": "Analysis plan\n\nVariables Involved\nThe variables which we use from the Big Tech Companies Dataset are:\n\n1 stock_symbol: The stock symbol representing the technology company on the stock exchange.\n2 company: The full name of the technology company.\n\nThe variables which we use from the Big Tech Stock Prices Dataset are:\n\n1 stock_symbol: The stock symbol of the technology company, allowing for identification of the company’s stock data.\n2 date: The date the stock prices were recorded.\n3 open: The price at which the stock first traded upon the exchange opening that day.\n4 high: The highest price the stock traded during the trading day.\n5 low: The lowest price the stock traded during the trading day.\n6 close: The final price the stock traded during the trading day.\n7 adj_close: The closing price after adjustments for all applicable splits and dividend distributions.\n8 volume: The total number of shares traded during the trading day.\n\n\n\nQ1\nAnalyzing stock prices from Big Tech Stock Price dataset over time using open, close, high, and low values. Creating visualizations like candlestick charts, line plots and bar plots to gain insights into the stock’s behavior. Bar plot depicts the volume of the stock which implies that taller the bar higher the stock trade. Each day has a total of 8 variables.\n\nAnalysis\nWe plan to answer question one by investigating the rate of change of trading volume and average price over time to find trends that reveal good times to invest, i.e. when stock prices are about to grow exponentially, we would invest our money. Inversely, if we saw an exponential decrease in price over time, we would want to take our money out ASAP.\n\n\n\nQ2\nTo determine the value of an investment in 2022 based on an initial investment in 2010, we need to know the annual rate of return of the investment over that time period. Without this information, it’s impossible to calculate the exact value of the investment in 2022.\nHowever, we can make some generalizations:\n\n1.Using Historical Market Data\n2.Consulting Financial Professionals\n\n\nAnalysis\nWe will use DMA(daily moving averages) to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Big Tech Stock Prices",
-    "section": "",
-    "text": "Add project abstract here."
-  },
-  {
-    "objectID": "index.html#abstract",
-    "href": "index.html#abstract",
-    "title": "Big Tech Stock Prices",
-    "section": "",
-    "text": "Add project abstract here."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This project was developed by [Team: Tech Titans] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\nTeam member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\nShashank Yadav: 2nd Year, PhD Student, Biomedical Engineering."
-  },
-  {
     "objectID": "presentation.html#quarto",
     "href": "presentation.html#quarto",
     "title": "Project title",
@@ -117,5 +61,61 @@
     "title": "Project title",
     "section": "Feeling adventurous?",
     "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This project was developed by [Team: Tech Titans] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nTeam member 1: One sentence description of Team member 1 (e.g., year, major, etc.).\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\nTeam member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\nShashank Yadav: 2nd Year, PhD Student, Biomedical Engineering."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Big Tech Stock Prices",
+    "section": "",
+    "text": "Add project abstract here."
+  },
+  {
+    "objectID": "index.html#abstract",
+    "href": "index.html#abstract",
+    "title": "Big Tech Stock Prices",
+    "section": "",
+    "text": "Add project abstract here."
+  },
+  {
+    "objectID": "proposal.html",
+    "href": "proposal.html",
+    "title": "Big Tech Stock Prices",
+    "section": "",
+    "text": "import numpy as np\nimport pandas as pd"
+  },
+  {
+    "objectID": "proposal.html#dataset",
+    "href": "proposal.html#dataset",
+    "title": "Big Tech Stock Prices",
+    "section": "Dataset",
+    "text": "Dataset\nThis dataset, “Big Tech Stock Prices,” sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent 14 technology companies including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more..\nThere are 2 CSV files in the dataset:\nbig_tech_stock_prices.csv: This file comprises 45,087 observations across 8 variables, encompassing stock market data for 14 major technology companies. Key variables within the dataset include stock_symbol, date, open, high, low, close, adj_close, and volume, all of which offer insights into daily stock performance\n\nstocks = pd.read_csv('data/big_tech_stock_prices.csv')\nstocks.head()\n\n\n\n\n\n\n\n\nstock_symbol\ndate\nopen\nhigh\nlow\nclose\nadj_close\nvolume\n\n\n\n\n0\nAAPL\n2010-01-04\n7.622500\n7.660714\n7.585000\n7.643214\n6.515213\n493729600\n\n\n1\nAAPL\n2010-01-05\n7.664286\n7.699643\n7.616071\n7.656429\n6.526476\n601904800\n\n\n2\nAAPL\n2010-01-06\n7.656429\n7.686786\n7.526786\n7.534643\n6.422664\n552160000\n\n\n3\nAAPL\n2010-01-07\n7.562500\n7.571429\n7.466071\n7.520714\n6.410790\n477131200\n\n\n4\nAAPL\n2010-01-08\n7.510714\n7.571429\n7.466429\n7.570714\n6.453412\n447610800\n\n\n\n\n\n\n\nbig_tech_companies.csv: This file serves as metadata, providing the names of companies alongside their associated stock symbols.\n\ncompanies = pd.read_csv('data/big_tech_companies.csv')\ncompanies.head()\n\n\n\n\n\n\n\n\nstock_symbol\ncompany\n\n\n\n\n0\nAAPL\nApple Inc.\n\n\n1\nADBE\nAdobe Inc.\n\n\n2\nAMZN\nAmazon.com, Inc.\n\n\n3\nCRM\nSalesforce, Inc.\n\n\n4\nCSCO\nCisco Systems, Inc."
+  },
+  {
+    "objectID": "proposal.html#reason-for-choosing-this-dataset",
+    "href": "proposal.html#reason-for-choosing-this-dataset",
+    "title": "Big Tech Stock Prices",
+    "section": "Reason for Choosing This Dataset",
+    "text": "Reason for Choosing This Dataset\nWe chose this dataset for its potential to provide valuable insights into the stock market behavior of big tech companies. The dataset encompasses a range of data types, including numerical values like stock prices and trading volumes and categorical data such as company names and dates. This composition enables a comprehensive examination of stock market trends, facilitates comparisons across various companies, and aids in assessing the influence of significant external events on stock valuations."
+  },
+  {
+    "objectID": "proposal.html#questions",
+    "href": "proposal.html#questions",
+    "title": "Big Tech Stock Prices",
+    "section": "Questions",
+    "text": "Questions\nThe two questions you want to answer.\n\nQ1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.\n\n\nQ2: Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market."
+  },
+  {
+    "objectID": "proposal.html#analysis-plan",
+    "href": "proposal.html#analysis-plan",
+    "title": "Big Tech Stock Prices",
+    "section": "Analysis plan",
+    "text": "Analysis plan\n\nQ1\nAnalyzing stock prices from Big Tech Stock Price dataset over time using open, close, high, and low values. Creating visualizations like candlestick charts, line plots and bar plots to gain insights into the stock’s behavior. Bar plot depicts the volume of the stock which implies that taller the bar higher the stock trade. Each day has a total of 8 variables.\n\nFor Example: A Candlestick plot\n\nimport warnings\nwarnings.simplefilter(\"ignore\", category=FutureWarning)\nimport plotly.graph_objects as go\ndf = stocks.copy()\ndf['date'] = pd.to_datetime(df['date'])\n\ndf_google = df[df['stock_symbol'] == 'GOOGL']\n# Creating a candlestick chart\nfig = go.Figure(data=[go.Candlestick(x=df_google['date'],\n                open=df_google['open'],\n                high=df_google['high'],\n                low=df_google['low'],\n                close=df_google['close'],\n                name=\"Candlestick\")])\n\n# Customizing the layout\nfig.update_layout(title='Candlestick Chart Example with GOOGLE stock',\n                  xaxis_title='Date',\n                  yaxis_title='Price',\n                  xaxis_rangeslider_visible=False,\n                  height=400)\n\n# Showing the figure\nfig.show()\n\n                                                \n\n\n\n\nAnd visualizing all stocks at once using line plots.\n\nstocks = companies['stock_symbol'].values.tolist()\n# Creating a DataFrame to hold all the stock data\n# For simplicity, let's generate some random closing prices\nall_stock_data = df\n\n# Create a Plotly figure\nfig = go.Figure()\n\n# Add a line for each stock\nfor stock in stocks:\n    stock_data = df[df['stock_symbol'] == stock]\n    fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['close'], mode='lines', name=stock))\n\n# Customize the layout\nfig.update_layout(\n    title='Stock Close Prices Over Time',\n    xaxis_title='Date',\n    yaxis_title='Close Price',\n    height=400\n)\n\n# Show the figure\nfig.show()\n\n                                                \n\n\n\n\nAnalysis\nWe plan to answer question one by investigating the rate of change of trading volume and average price over time to find trends that reveal good times to invest, i.e. when stock prices are about to grow exponentially, we would invest our money. Inversely, if we saw an exponential decrease in price over time, we would want to take our money out ASAP.\n\n\n\nQ2\nTo determine the value of an investment in 2022 based on an initial investment in 2010, we need to know the annual rate of return of the investment over that time period. Without this information, it’s impossible to calculate the exact value of the investment in 2022.\nHowever, we can make some generalizations:\n\n1.Using Historical Market Data\n2.Consulting Financial Professionals\n\n\nAnalysis\nWe will use DMA(daily moving averages) to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return."
   }
 ]
