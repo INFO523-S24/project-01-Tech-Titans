@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.547">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -128,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#q1" id="toc-q1" class="nav-link" data-scroll-target="#q1">Q1</a>
+  <li><a href="#q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc." id="toc-q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc." class="nav-link" data-scroll-target="#q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc.">Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.**</a>
   <ul class="collapse">
   <li><a href="#eda" id="toc-eda" class="nav-link" data-scroll-target="#eda">EDA</a></li>
   <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
@@ -175,17 +209,120 @@ ul.task-list li input[type="checkbox"] {
 <section id="abstract" class="level2">
 <h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
 <p>Add project abstract here.</p>
+<div id="load-pkgs" class="cell" data-message="false" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing the required libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading Data</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>stocks <span class="op">=</span> pd.read_csv(<span class="st">'data/big_tech_stock_prices.csv'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>companies <span class="op">=</span> pd.read_csv(<span class="st">'data/big_tech_companies.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="q1" class="level2">
-<h2 class="anchored" data-anchor-id="q1">Q1</h2>
+<section id="q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc." class="level2">
+<h2 class="anchored" data-anchor-id="q1-how-do-stock-prices-change-over-time-looking-at-the-basic-information-like-open-close-high-low-etc.">Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.**</h2>
 <section id="eda" class="level3">
 <h3 class="anchored" data-anchor-id="eda">EDA</h3>
+<div id="ca2a8d82" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Exploratory Data Analysis (EDA)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> stocks.copy()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert the date column to datetime format</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'date'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'date'</span>])</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary Statistics</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>company_stats <span class="op">=</span> df.groupby(<span class="st">'stock_symbol'</span>).agg({<span class="st">'open'</span>: [<span class="st">'mean'</span>, <span class="st">'median'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>, <span class="st">'std'</span>], <span class="st">'volume'</span>: [<span class="st">'mean'</span>, <span class="st">'median'</span>, <span class="st">'min'</span>, <span class="st">'max'</span>, <span class="st">'std'</span>]})</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Summary Statistics:"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(company_stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Summary Statistics:
+                    open                                                 \
+                    mean      median        min         max         std   
+stock_symbol                                                              
+AAPL           51.274171   29.745001   6.870357  182.630005   47.316509   
+ADBE          186.023938   97.589996  22.969999  696.280029  173.562115   
+AMZN           58.937204   36.325001   5.296500  187.199997   54.138607   
+CRM           103.419948   76.290001  15.522500  310.000000   71.287894   
+CSCO           33.493880   29.500000  13.930000   64.040001   12.643887   
+GOOGL          49.149625   38.521000  10.968719  151.250000   35.809816   
+IBM           148.427471  143.173996  90.439774  205.908218   23.998357   
+INTC           36.481406   34.270000  17.879999   68.199997   12.912534   
+META          147.874275  141.620002  18.080000  381.679993   86.734656   
+MSFT          100.048490   55.660000  23.090000  344.619995   88.228008   
+NFLX          188.242206  110.010002   6.960000  692.349976  178.967463   
+NVDA           50.560335   11.902500   2.180000  335.170013   69.538684   
+ORCL           46.242177   41.750000  21.459999  104.290001   16.864193   
+TSLA           58.859467   16.229000   1.076000  411.470001   95.677282   
+
+                    volume                                                   
+                      mean       median       min         max           std  
+stock_symbol                                                                 
+AAPL          2.563255e+08  166674000.0  35195900  1880998000  2.225768e+08  
+ADBE          3.814337e+06    2948500.0    589200   108752400  3.598144e+06  
+AMZN          8.833999e+07   74592000.0  17626000   848422000  5.309249e+07  
+CRM           6.910973e+06    5548800.0   1084700    64562800  5.048860e+06  
+CSCO          3.269656e+07   25482400.0   5720500   560040200  2.570963e+07  
+GOOGL         6.018647e+07   41234000.0   9312000   592399008  4.957963e+07  
+IBM           5.036545e+06    4345189.0   1247878    39814421  2.772073e+06  
+INTC          3.607170e+07   29874600.0   5893800   199002600  2.123178e+07  
+META          3.117815e+07   23239000.0   5913100   573576400  2.713267e+07  
+MSFT          3.801647e+07   32280800.0   7425600   319317900  2.147328e+07  
+NFLX          1.841485e+07   11961800.0   1144000   315541800  2.054316e+07  
+NVDA          5.080613e+07   43395600.0   4564400   369292800  3.210953e+07  
+ORCL          1.801856e+07   14699800.0   2754900   183503900  1.251053e+07  
+TSLA          9.351647e+07   75914250.0   1777500   914082000  8.164780e+07  </code></pre>
+</div>
+</div>
 </section>
 <section id="data-wrangling" class="level3">
 <h3 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h3>
+<div id="e0075208" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Data Wrangling</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Handle missing values(No missing values)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="data-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="data-visualization">Data Visualization</h3>
+<div id="b996662d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Company-wise Visualizations</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> company, data <span class="kw">in</span> df.groupby(<span class="st">'stock_symbol'</span>):</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    plt.plot(data[<span class="st">'date'</span>], data[<span class="st">'close'</span>], label<span class="op">=</span>company)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Closing Prices Over Time for Different Companies'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Close Price'</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Volume Analysis</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>avg_volume <span class="op">=</span> df.groupby(<span class="st">'stock_symbol'</span>)[<span class="st">'volume'</span>].mean().sort_values()</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>avg_volume.plot(kind<span class="op">=</span><span class="st">'bar'</span>, color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Volume Traded for Each Stock Symbol'</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Stock Symbol'</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Volume (Shares Traded)'</span>)  <span class="co"># Unit added</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>, ha<span class="op">=</span><span class="st">'right'</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-1.png" width="965" height="671" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-5-output-2.png" width="949" height="565" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
 <section id="q2" class="level2">

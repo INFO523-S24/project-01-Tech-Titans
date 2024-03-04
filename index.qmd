@@ -11,22 +11,88 @@ jupyter: python3
 
 Add project abstract here.
 
-## Q1
+
+
+```{python}
+#| label: load-pkgs
+#| message: false
+
+# Importing the required libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Loading Data
+stocks = pd.read_csv('data/big_tech_stock_prices.csv')
+companies = pd.read_csv('data/big_tech_companies.csv')
+
+
+```
+
+
+
+
+## Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
+
 
 ### EDA
 ``` {python}
+# Step 1: Exploratory Data Analysis (EDA)
+df = stocks.copy()
+
+# Convert the date column to datetime format
+df['date'] = pd.to_datetime(df['date'])
+
+# Summary Statistics
+company_stats = df.groupby('stock_symbol').agg({'open': ['mean', 'median', 'min', 'max', 'std'], 'volume': ['mean', 'median', 'min', 'max', 'std']})
+print("Summary Statistics:")
+print(company_stats)
+
+
+
+
 
 
 ```
 
 ### Data Wrangling
 ``` {python}
+# Step 2: Data Wrangling
+# Handle missing values(No missing values)
 
 
 ```
+
 ### Data Visualization 
 
 ``` {python}
+# Company-wise Visualizations
+plt.figure(figsize=(12, 8))
+for company, data in df.groupby('stock_symbol'):
+    plt.plot(data['date'], data['close'], label=company)
+plt.title('Closing Prices Over Time for Different Companies')
+plt.xlabel('Date')
+plt.ylabel('Close Price')
+plt.legend()
+plt.show()
+
+# Volume Analysis
+avg_volume = df.groupby('stock_symbol')['volume'].mean().sort_values()
+
+# Plotting
+plt.figure(figsize=(10, 6))
+avg_volume.plot(kind='bar', color='skyblue')
+plt.title('Average Volume Traded for Each Stock Symbol')
+plt.xlabel('Stock Symbol')
+plt.ylabel('Average Volume (Shares Traded)')  # Unit added
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
+
+
+
+
 
 
 ```
