@@ -55,7 +55,7 @@ Analyzing stock prices from Big Tech Stock Price dataset over time using open, c
 #### **For Example: A Candlestick plot**
 
 ```{python}
-
+import matplotlib.pyplot
 import warnings
 warnings.simplefilter("ignore", category=FutureWarning)
 import plotly.graph_objects as go

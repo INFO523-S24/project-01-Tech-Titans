@@ -10,3 +10,43 @@ jupyter: python3
 ## Abstract
 
 Add project abstract here.
+
+## Q1
+
+### EDA
+``` {python}
+
+
+```
+
+### Data Wrangling
+``` {python}
+
+
+```
+### Data Visualization 
+
+``` {python}
+
+
+```
+
+## Q2
+
+### EDA
+``` {python}
+
+
+```
+
+### Data Wrangling
+``` {python}
+
+
+```
+### Data Visualization 
+
+``` {python}
+
+
+```
