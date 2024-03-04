@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+<<<<<<< HEAD
     <loc>https://INFO523-S24.github.io/project-01-Tech-Titans/presentation.html</loc>
     <lastmod>2024-02-14T17:30:35.026Z</lastmod>
   </url>
@@ -15,5 +16,21 @@
   <url>
     <loc>https://INFO523-S24.github.io/project-01-Tech-Titans/proposal.html</loc>
     <lastmod>2024-02-14T18:07:53.039Z</lastmod>
+=======
+    <loc>https://INFO523-S24.github.io/project-01-Tech-Titans/proposal.html</loc>
+    <lastmod>2024-02-07T20:22:55.072Z</lastmod>
+  </url>
+  <url>
+    <loc>https://INFO523-S24.github.io/project-01-Tech-Titans/index.html</loc>
+    <lastmod>2024-02-07T20:11:11.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://INFO523-S24.github.io/project-01-Tech-Titans/presentation.html</loc>
+    <lastmod>2024-02-07T20:11:11.024Z</lastmod>
+  </url>
+  <url>
+    <loc>https://INFO523-S24.github.io/project-01-Tech-Titans/about.html</loc>
+    <lastmod>2024-02-07T20:11:11.011Z</lastmod>
+>>>>>>> 9b554f7 (commiting bc VScode)
   </url>
 </urlset>
