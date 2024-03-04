@@ -22,6 +22,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.graph_objects as go
+
 
 # Loading Data
 stocks = pd.read_csv('data/big_tech_stock_prices.csv')
@@ -69,40 +71,67 @@ print(company_stats)
 
 Closing Prices Over Time for Different Companies
 ``` {python}
-# Company-wise Visualizations
-plt.figure(figsize=(12, 8))
-for company, data in df.groupby('stock_symbol'):
-    plt.plot(data['date'], data['close'], label=company)
-plt.title('Closing Prices Over Time for Different Companies')
-plt.xlabel('Date')
-plt.ylabel('Close Price')
-plt.legend()
-plt.show()
+
+stocks = companies['stock_symbol'].values.tolist()
+# Creating a DataFrame to hold all the stock data
+# For simplicity, let's generate some random closing prices
+all_stock_data = df
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add a line for each stock
+for stock in stocks:
+    stock_data = df[df['stock_symbol'] == stock]
+    fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['close'], mode='lines', name=stock))
+
+# Customize the layout
+fig.update_layout(
+    title='Stock Close Prices Over Time',
+    xaxis_title='Date',
+    yaxis_title='Close Price',
+    height=400
+)
+
+# Show the figure
+fig.show()
 ```
 
 
 
 Volume Analysis using Bar Plot
 ``` {python}
-# Volume Analysis
+# Calculate average volume traded for each stock symbol
 avg_volume = df.groupby('stock_symbol')['volume'].mean().sort_values()
 
-# Plotting
-plt.figure(figsize=(10, 6))
-avg_volume.plot(kind='bar', color='skyblue')
-plt.title('Average Volume Traded for Each Stock Symbol')
-plt.xlabel('Stock Symbol')
-plt.ylabel('Average Volume (Shares Traded)')  # Unit added
-plt.xticks(rotation=45, ha='right')
-plt.tight_layout()
-plt.show()
+# Create a bar trace
+bar_trace = go.Bar(
+    x=avg_volume.index,  # Stock symbols
+    y=avg_volume.values,  # Average volume
+    marker_color='skyblue'
+)
+
+# Create a layout
+layout = go.Layout(
+    title='Average Volume Traded for Each Stock Symbol',
+    xaxis=dict(title='Stock Symbol'),
+    yaxis=dict(title='Average Volume (Shares Traded)'),
+    xaxis_tickangle=-45,
+    margin=dict(l=40, r=40, t=60, b=20)
+)
+
+# Create a figure
+fig = go.Figure(data=[bar_trace], layout=layout)
+
+# Show the figure
+fig.show()
 
 ```
 
 
 
 
-```
+
 
 ## Q2
 
