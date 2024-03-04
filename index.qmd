@@ -66,6 +66,8 @@ print(company_stats)
 
 ### Data Visualization 
 
+
+Closing Prices Over Time for Different Companies
 ``` {python}
 # Company-wise Visualizations
 plt.figure(figsize=(12, 8))
@@ -76,7 +78,12 @@ plt.xlabel('Date')
 plt.ylabel('Close Price')
 plt.legend()
 plt.show()
+```
 
+
+
+Volume Analysis using Bar Plot
+``` {python}
 # Volume Analysis
 avg_volume = df.groupby('stock_symbol')['volume'].mean().sort_values()
 
@@ -90,7 +97,7 @@ plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
 plt.show()
 
-
+```
 
 
 
