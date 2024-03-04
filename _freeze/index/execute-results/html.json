@@ -1,10 +1,10 @@
 {
-  "hash": "fa342b68492cef582150780458302749",
+  "hash": "7cb7e88e7e3f63806c988c5e7c7f8df3",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: Big Tech Stock Prices\nsubtitle: Analyzing Big Tech stock prices from 2010 to 2022\nauthor: Tech Titans\nformat: html\neditor: visual\n---\n\n## Abstract\n\nAdd project abstract here.\n\n",
+    "markdown": "---\ntitle: Big Tech Stock Prices\nsubtitle: Analyzing Big Tech stock prices from 2010 to 2022\nauthor: Tech Titans\nformat: html\neditor: visual\n---\n\n## Abstract\n\nAdd project abstract here.\n\n## Q1\n\n### EDA\n\n### Data Wrangling\n\n### Data Visualization \n\n## Q2\n\n### EDA\n\n### Data Wrangling\n\n### Data Visualization \n\n",
     "supporting": [
-      "index_files"
+      "index_files/figure-html"
     ],
     "filters": [],
     "includes": {}
