@@ -69,6 +69,40 @@ print(company_stats)
 ### Data Visualization 
 
 
+
+``` {python}
+
+# Initialize an empty list to store candlestick traces for all companies
+candlestick_traces = []
+
+# Loop through each company and create a candlestick trace
+for company in stocks['stock_symbol'].unique():
+    df_company = stocks[stocks['stock_symbol'] == company]
+    candlestick_trace = go.Candlestick(x=df_company['date'],
+                                       open=df_company['open'],
+                                       high=df_company['high'],
+                                       low=df_company['low'],
+                                       close=df_company['close'],
+                                       name=f"{company} Candlestick")
+    candlestick_traces.append(candlestick_trace)
+
+# Create the figure
+fig = go.Figure(data=candlestick_traces)
+
+# Customize the layout
+fig.update_layout(title='Candlestick Chart for 14 Companies',
+                  xaxis_title='Date',
+                  yaxis_title='Price',
+                  xaxis_rangeslider_visible=False,
+                  height=600,
+                  width=1000)
+
+# Show the figure
+fig.show()
+
+```
+
+
 Closing Prices Over Time for Different Companies
 ``` {python}
 
