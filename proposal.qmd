@@ -138,3 +138,56 @@ However, we can make some generalizations:
 
 #### Analysis
 We will use DMA(daily moving averages) to create a generalized equation for how each stock grows over time, we can then see how money will grow in each stock by setting an initial investment and seeing its final value in 2022. To do so, we need to understand factors like inflation and interest rates, as well as annual rate of return.
+
+## Detailed Plan for Data Processing and Analysis
+
+### Step 1: Data Integration
+
+Merge the big-tech-companies stock data with the supplementary list of companies to map stock_symbol to company names.
+
+Ensure the date column is in the correct datetime format for time-series analysis.
+
+
+### Step 2: Data Cleaning
+
+Check for missing values in both datasets and decide on an imputation strategy or whether to omit incomplete records.
+
+Standardize text fields to ensure consistency (e.g., company names).
+
+### Step 3: Outlier Detection and Treatment
+
+Use statistical methods such as Z-scores or IQR to identify outliers in stock prices.
+
+Decide on a treatment strategy: removing, adjusting, or keeping outliers after contextual evaluation.
+
+### Step 4: Descriptive Analysis
+
+Calculate summary statistics for stock prices and volumes to get an overall sense of the data distribution.
+
+Visualize the distribution of data using histograms for each numerical variable.
+
+### Step 5: Trend Analysis (Q1)
+
+Plot time-series graphs of stock prices to visualize trends over time.
+
+Employ rolling averages to smooth out short-term fluctuations and highlight long-term patterns.
+
+### Step 6: Investment Analysis (Q2)
+
+Simulate a $10,000 investment in a portfolio of the listed tech companies.
+
+Calculate the value of the investment at the end of 2022 using adj_close prices.
+
+Analyze the best and worst times to invest or divest by studying the rate of returns at different intervals.
+
+### Step 7: Reporting
+
+Document the findings from the trend and investment analyses.
+
+Highlight key insights regarding market behavior, investment opportunities, and risks.
+
+### Step 8: Final Review and Wrap-up
+
+Review the entire analysis for coherence and accuracy.
+
+Prepare a final report and presentation summarizing methodologies, findings, and insights.
