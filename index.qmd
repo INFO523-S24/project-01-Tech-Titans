@@ -172,11 +172,37 @@ fig.show()
 ### EDA
 ``` {python}
 
+# Load the CSV files
+stocks = pd.read_csv('data/big_tech_stock_prices.csv')
+companies = pd.read_csv('data/big_tech_companies.csv')
+
+# Copy the DataFrames to avoid modifying the original data
+df_stocks = stocks.copy()
+df_companies = companies.copy()
+
+# Now you can proceed with your groupby aggregation
+investment_stats = df_stocks.groupby('stock_symbol').agg({
+    'open': ['mean', 'median', 'min', 'max', 'std'],
+    'high': ['mean', 'median', 'min', 'max', 'std'],
+    'low': ['mean', 'median', 'min', 'max', 'std'],
+    'close': ['mean', 'median', 'min', 'max', 'std'],
+    'adj_close': ['mean', 'median', 'min', 'max', 'std'],
+    'volume': ['mean', 'median', 'min', 'max', 'std']
+})
+
+print("Summary Statistics:")
+print(investment_stats)
+
 
 ```
 
 ### Data Wrangling
 ``` {python}
+
+# Step 2: Data Wrangling
+# Handle missing values(No missing values)
+print("Null Values from Stocks dataset", stocks.isnull().sum())
+print("Null Values from companies dataset", companies.isnull().sum())
 
 
 ```
