@@ -15,11 +15,20 @@ import pandas as pd
 
 ## Dataset
 
-This dataset, "Big Tech Stock Prices," sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent 14 technology companies including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more..
+This dataset, "Big Tech Stock Prices," sourced from Yahoo Finance via Kaggle (by Evan Gower), provides information on stock prices and associated details for prominent 14 technology companies including Apple (AAPL), Amazon (AMZN), Alphabet (GOOGL), Meta Platforms (META), and more.
 
 There are 2 CSV files in the dataset:
 
-big_tech_stock_prices.csv: This file comprises 45,087 observations across 8 variables, encompassing stock market data for 14 major technology companies. Key variables within the dataset include stock_symbol, date, open, high, low, close, adj_close, and volume, all of which offer insights into daily stock performance
+big_tech_stock_prices.csv: This dataset captures daily stock market performance indicators of major technology firms from January 2010 onwards. It includes the following variables for each trading day:
+
+stock_symbol: The stock ticker symbol for each company.
+date: The date of trading.
+open: The price at which the stock started trading when the market opened.
+high: The highest price of the stock during the trading day.
+low: The lowest price of the stock during the trading day.
+close: The price of the stock at market close.
+adj_close: The closing price of the stock after adjustments for all applicable splits and dividend distributions.
+volume: The number of shares that changed hands during the trading day.
 
 ```{python}
 stocks = pd.read_csv('data/big_tech_stock_prices.csv')
@@ -44,10 +53,13 @@ The two questions you want to answer.
 
 ### **Q1:  How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
 
+To address this question, we will analyze time-series data to understand the trajectory of stock prices. Key variables for this analysis include date, open, high, low, close, and volume. We will employ visualizations such as line graphs to depict trends and use measures such as the moving average to smooth out short-term fluctuations and highlight longer-term trends.
+
 ### **Q2:  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.**
 
-## Analysis plan
+By simulating an investment strategy where a fixed amount, say $10,000, is invested in a diversified portfolio of these tech stocks in 2010, we will compute its valuation in 2022. We will use the adj_close prices to account for stock splits and dividends. The analysis will also involve calculating the rate of return, identifying peaks and troughs in investment value over time, and determining strategic entry and exit points in the market.
 
+## Analysis plan
 
 ### Q1
 Analyzing stock prices from Big Tech Stock Price dataset over time using open, close, high, and low values. Creating visualizations like candlestick charts, line plots and bar plots to gain insights into the stock's behavior. Bar plot depicts the volume of the stock which implies that taller the bar higher the stock trade. Each day has a total of 8 variables.
