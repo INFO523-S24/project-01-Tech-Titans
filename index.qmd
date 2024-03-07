@@ -172,18 +172,15 @@ fig.show()
 ### EDA
 ``` {python}
 #| label: Data-Analysis-Q2
+
+# Load the CSV files
+stocks = pd.read_csv('data/big_tech_stock_prices.csv')
+companies = pd.read_csv('data/big_tech_companies.csv')
 # Copy the DataFrames to avoid modifying the original data
 df_stocks = stocks.copy()
 df_companies = companies.copy()
-
-# Data Integration
-df = stocks.copy()
-
-# Convert the 'date' column to datetime format
-df['date'] = pd.to_datetime(df['date'])
-
-# Groupby aggregation and summary statistics
-investment_stats = df.groupby('stock_symbol').agg({
+# Now you can proceed with your groupby aggregation
+investment_stats = df_stocks.groupby('stock_symbol').agg({
     'open': ['mean', 'median', 'min', 'max', 'std'],
     'high': ['mean', 'median', 'min', 'max', 'std'],
     'low': ['mean', 'median', 'min', 'max', 'std'],
@@ -191,7 +188,6 @@ investment_stats = df.groupby('stock_symbol').agg({
     'adj_close': ['mean', 'median', 'min', 'max', 'std'],
     'volume': ['mean', 'median', 'min', 'max', 'std']
 })
-
 print("Summary Statistics:")
 print(investment_stats)
 
@@ -200,15 +196,16 @@ print(investment_stats)
 ### Data Wrangling
 ``` {python}
 #| label: Data-Wrangling-Q2
+
 # Handle missing values(No missing values)
-print("Null Values:", df.isnull().sum())
-print("Null Values:", df_companies.isnull().sum())
+print("Null Values from Stocks dataset", stocks.isnull().sum())
+print("Null Values from companies dataset", companies.isnull().sum())
 
 # Outlier Detection and Treatment
 # Calculate the Z-score for the 'adj_close' column
-df['z_score'] = stats.zscore(df['adj_close'])
+df_stocks['z_score'] = stats.zscore(df_stocks['adj_close'])
 # Remove outliers beyond 3 standard deviations
-df = df[df['z_score'].abs() <= 3]
+df_stocks = df_stocks[df_stocks['z_score'].abs() <= 3]
 
 ```
 
@@ -218,14 +215,14 @@ df = df[df['z_score'].abs() <= 3]
 stocks = companies['stock_symbol'].values.tolist()
 
 # Creating a DataFrame to hold all the stock data
-all_stock_data = df
+all_stock_data = df_stocks
 
 # Create a Plotly figure
 fig = go.Figure()
 
 # Add a line for each stock
 for stock in stocks:
-    stock_data = df[df['stock_symbol'] == stock]
+    stock_data = df_stocks[df_stocks['stock_symbol'] == stock]
     fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['close'], mode='lines', name=stock))
 
 # Customize the layout
@@ -285,7 +282,7 @@ Conversely, when the 50DMA crosses below the 200DMA, it's known as a "death cros
 ``` {python}
 #| label: Data-Visualization-Q2-Part2
 
-df_AAPL = df[df['stock_symbol'] == 'AAPL']
+df_AAPL = df_stocks[df_stocks['stock_symbol'] == 'AAPL']
 
 start_date = "2013-01-01"
 df_AAPL = df_AAPL[df_AAPL['date'] >= start_date]
