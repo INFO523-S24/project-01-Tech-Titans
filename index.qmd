@@ -9,10 +9,9 @@ jupyter: python3
 
 ## Abstract
 
-Add project abstract here.
+The goal of this project is to understand the temporal behavior of Big Tech stocks that are actively traded on the NYSE. This analysis will show trends in the market to understand times when the market was on a downtrend (bear market) or in an uptrend (bull market). This will provide insight into times when investments should be made or when they should be pulled back. Investment analyses such as the aformentioned are extremely valuable to large finanacial institutions that aim to benefit from growth in the market. This is extremely important for those who place their hard earned dollar with these institutions as a means to save for retirement.
 
-
-
+The analysis will consist of answering two key questions in a sequential manner: exploratory data analysis (EDA), data wrangling, and data visualization. This process is key to gaining insight from the data and allows for a clean platform that can used to train machine learning models.
 ```{python}
 #| label: load-pkgs
 #| message: false
