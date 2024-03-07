@@ -22,7 +22,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objects as go
-
+from scipy import stats
 
 # Loading Data
 stocks = pd.read_csv('data/big_tech_stock_prices.csv')
@@ -168,24 +168,6 @@ fig.show()
 
 ## Q2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.
 
-<!-- ```{python}
-#| label: load-pkgs
-#| message: false
-
-# Importing the required libraries
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.graph_objects as go
-from scipy import stats
-
-# Loading Data
-stocks = pd.read_csv('data/big_tech_stock_prices.csv')
-companies = pd.read_csv('data/big_tech_companies.csv')
-
-``` -->
-
 
 ### EDA
 ``` {python}
@@ -221,6 +203,7 @@ print(investment_stats)
 #| label: Data-Wrangling-Q2
 # Handle missing values(No missing values)
 print("Null Values:", df.isnull().sum())
+print("Null Values:", df_companies.isnull().sum())
 
 # Outlier Detection and Treatment
 # Calculate the Z-score for the 'adj_close' column
