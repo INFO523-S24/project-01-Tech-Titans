@@ -177,8 +177,7 @@ df_stocks = stocks.copy()
 df_companies = companies.copy()
 
 # Data Integration
-# Merge the two DataFrames on the stock_symbol column.
-df = pd.merge(df_stocks, df_companies, on='stock_symbol', how='left')
+df = stocks.copy()
 
 # Convert the 'date' column to datetime format
 df['date'] = pd.to_datetime(df['date'])
