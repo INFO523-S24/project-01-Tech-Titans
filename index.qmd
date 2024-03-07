@@ -234,10 +234,9 @@ df = df[df['z_score'].abs() <= 3]
 ### Data Visualization 
 ```{python}
 #| label: Stock-Close-Prices-Over-Time
-
 stocks = companies['stock_symbol'].values.tolist()
-# Creating a DataFrame to hold all the stock data
 
+# Creating a DataFrame to hold all the stock data
 all_stock_data = df
 
 # Create a Plotly figure
@@ -261,6 +260,7 @@ fig.show()
 ```
 
 ```{python}
+#| label: Normalized-Stock-Close-Prices
 start_date = "2010-01-01"
 filtered_data = all_stock_data[all_stock_data['date'] >= start_date]
 
