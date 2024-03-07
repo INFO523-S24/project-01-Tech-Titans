@@ -1,0 +1,10 @@
+jupyter
+nbformat
+numpy
+pandas
+matplotlib
+seaborn
+stats
+plotly
+PyYAML
+nbclient
