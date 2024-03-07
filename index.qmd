@@ -167,21 +167,43 @@ fig.show()
 
 
 
-## Q2
+## Q2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.
 
-### EDA
-``` {python}
+```{python}
+#| label: load-pkgs
+#| message: false
 
-# Load the CSV files
+# Importing the required libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.graph_objects as go
+from scipy import stats
+
+# Loading Data
 stocks = pd.read_csv('data/big_tech_stock_prices.csv')
 companies = pd.read_csv('data/big_tech_companies.csv')
 
+```
+
+
+### EDA
+``` {python}
+#| label: Data-Analysis-Q2
 # Copy the DataFrames to avoid modifying the original data
 df_stocks = stocks.copy()
 df_companies = companies.copy()
 
-# Now you can proceed with your groupby aggregation
-investment_stats = df_stocks.groupby('stock_symbol').agg({
+# Data Integration
+# Merge the two DataFrames on the stock_symbol column.
+df = pd.merge(df_stocks, df_companies, on='stock_symbol', how='left')
+
+# Convert the 'date' column to datetime format
+df['date'] = pd.to_datetime(df['date'])
+
+# Groupby aggregation and summary statistics
+investment_stats = df.groupby('stock_symbol').agg({
     'open': ['mean', 'median', 'min', 'max', 'std'],
     'high': ['mean', 'median', 'min', 'max', 'std'],
     'low': ['mean', 'median', 'min', 'max', 'std'],
@@ -193,22 +215,130 @@ investment_stats = df_stocks.groupby('stock_symbol').agg({
 print("Summary Statistics:")
 print(investment_stats)
 
-
 ```
 
 ### Data Wrangling
 ``` {python}
-
-# Step 2: Data Wrangling
+#| label: Data-Wrangling-Q2
 # Handle missing values(No missing values)
-print("Null Values from Stocks dataset", stocks.isnull().sum())
-print("Null Values from companies dataset", companies.isnull().sum())
+print("Null Values:", df.isnull().sum())
 
+# Outlier Detection and Treatment
+# Calculate the Z-score for the 'adj_close' column
+df['z_score'] = stats.zscore(df['adj_close'])
+# Remove outliers beyond 3 standard deviations
+df = df[df['z_score'].abs() <= 3]
 
 ```
+
 ### Data Visualization 
+```{python}
+#| label: Stock-Close-Prices-Over-Time
+
+stocks = companies['stock_symbol'].values.tolist()
+# Creating a DataFrame to hold all the stock data
+
+all_stock_data = df
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add a line for each stock
+for stock in stocks:
+    stock_data = df[df['stock_symbol'] == stock]
+    fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['close'], mode='lines', name=stock))
+
+# Customize the layout
+fig.update_layout(
+    title='Stock Close Prices Over Time',
+    xaxis_title='Date',
+    yaxis_title='Close Price',
+    height=800
+)
+
+# Show the figure
+fig.show()
+```
+
+```{python}
+start_date = "2010-01-01"
+filtered_data = all_stock_data[all_stock_data['date'] >= start_date]
+
+# Normalize each stock's prices to start from a base (e.g., 100)
+base = 10
+for stock in stocks:
+    initial_price = filtered_data[filtered_data['stock_symbol'] == stock].iloc[0]['close']
+    filtered_data.loc[filtered_data['stock_symbol'] == stock, 'Normalized Close'] = base * (filtered_data['close'] / initial_price)
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add a line for each stock's normalized close prices
+for stock in stocks:
+    stock_data = filtered_data[filtered_data['stock_symbol'] == stock]
+    fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['Normalized Close'], mode='lines', name=stock))
+
+# Customize the layout
+fig.update_layout(
+    title='Normalized Stock Close Prices Over Time',
+    xaxis_title='Date',
+    yaxis_title='Normalized Close Price',
+    height=600
+)
+
+# Show the figure
+fig.show()
+
+```
+
+To answer the question "when would be a good/bad time to pull investment out of the market? " we rely on a common trading strategy based on moving averages:
+
+The 50-day moving average (50DMA) is often used as a short-term trend indicator. It’s more sensitive to price changes in the recent past.
+
+The 200-day moving average (200DMA) is commonly used as a long-term trend indicator. It’s less sensitive to daily price fluctuations and more indicative of a longer-term trend.
+
+When the 50DMA crosses above the 200DMA, it's often referred to as a "golden cross," which some traders interpret as a bullish signal suggesting that the price might increase, potentially a good time to buy.
+
+Conversely, when the 50DMA crosses below the 200DMA, it's known as a "death cross," which is considered by some traders to be a bearish signal, indicating that the price might drop, and it could be a good time to sell.
 
 ``` {python}
+#| label: Data-Visualization-Q2-Part2
 
+df_AAPL = df[df['stock_symbol'] == 'AAPL']
 
+start_date = "2013-01-01"
+df_AAPL = df_AAPL[df_AAPL['date'] >= start_date]
+
+# Calculate 200DMA and 50DMA
+df_AAPL['200DMA'] = df_AAPL['close'].rolling(window=200).mean()
+df_AAPL['50DMA'] = df_AAPL['close'].rolling(window=50).mean()
+
+# Creating the candlestick chart
+fig = go.Figure()
+
+# Add Candlestick trace
+fig.add_trace(go.Candlestick(x=df_AAPL['date'],
+                open=df_AAPL['open'], high=df_AAPL['high'],
+                low=df_AAPL['low'], close=df_AAPL['close'],
+                name='Candlestick'))
+
+# Add 200DMA Line trace
+fig.add_trace(go.Scatter(x=df_AAPL['date'], y=df_AAPL['200DMA'],
+                         mode='lines', name='200DMA',
+                         line=dict(color='blue', width=2)))
+
+# Add 50DMA Line trace
+fig.add_trace(go.Scatter(x=df_AAPL['date'], y=df_AAPL['50DMA'],
+                         mode='lines', name='50DMA',
+                         line=dict(color='red', width=2)))
+
+# Customize the layout
+fig.update_layout(title='Stock Price with 200DMA and 50DMA',
+                  xaxis_title='Date',
+                  yaxis_title='Price',
+                  xaxis_rangeslider_visible=False,  # Hides the range slider
+                  height=600)
+
+# Show the figure
+fig.show()
 ```
