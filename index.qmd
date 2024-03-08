@@ -38,7 +38,7 @@ companies = pd.read_csv('data/big_tech_companies.csv')
 ## Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
 
 
-### EDA
+### Introduction
 ``` {python}
 # Step 1: Exploratory Data Analysis (EDA)
 df = stocks.copy()
@@ -58,7 +58,7 @@ print(company_stats)
 
 ```
 
-### Data Wrangling
+### Approach
 ``` {python}
 # Step 2: Data Wrangling
 # Handle missing values(No missing values)
@@ -66,7 +66,7 @@ print(company_stats)
 
 ```
 
-### Data Visualization 
+### Analysis
 
 
 
@@ -174,7 +174,7 @@ fig.show()
 
 ```
 
-
+### Discussion
 
 
 
@@ -182,7 +182,7 @@ fig.show()
 ## Q2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.
 
 
-### EDA
+### Introduction
 ``` {python}
 #| label: Data-Analysis-Q2
 
@@ -206,7 +206,7 @@ print(investment_stats)
 
 ```
 
-### Data Wrangling
+### Approach
 ``` {python}
 #| label: Data-Wrangling-Q2
 
@@ -222,7 +222,7 @@ df_stocks = df_stocks[df_stocks['z_score'].abs() <= 3]
 
 ```
 
-### Data Visualization 
+### Analysis
 ```{python}
 #| label: Stock-Close-Prices-Over-Time
 stocks = companies['stock_symbol'].values.tolist()
@@ -333,3 +333,5 @@ fig.update_layout(title='Stock Price with 200DMA and 50DMA',
 # Show the figure
 fig.show()
 ```
+
+### Discussion (move text from above down here)
