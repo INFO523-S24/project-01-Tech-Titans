@@ -24,6 +24,7 @@ import seaborn as sns
 import plotly.graph_objects as go
 from scipy import stats
 
+
 # Loading Data
 stocks = pd.read_csv('data/big_tech_stock_prices.csv')
 companies = pd.read_csv('data/big_tech_companies.csv')
@@ -98,6 +99,18 @@ fig.update_layout(title='Candlestick Chart for 14 Companies',
 
 # Show the figure
 fig.show()
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
 
