@@ -39,10 +39,13 @@ The dataset used in this analysis was sourced from Tidy Tuesday; an open source 
 The interest in this dataset was sparked by its potential to provide valuable insights into the stock market behavior of big tech companies. This enables a comprehensive examination of stock market trends, facilitates comparisons across various companies, and aids in assessing the influence of significant external events on stock valuations.
 
 
-## Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
+## Q1: How do stock prices change over time based on basic economic metrics
 
 
 ### Introduction
+
+To answer the question of how stock prices change over time, the daily price movement and volume will be visualized. Looking at price changes temporally will provide insights into past trends in the stock market. The stock market is cyclical, and thus finding patterns in the past data will allow for insights into future movements of the stock market. This is benefical because it can lead to knowledge of when a stock price will rise. The interest in this question is based on team interest in investing and making low-risk financial decisions. 
+ 
 ``` {python}
 # Step 1: Exploratory Data Analysis (EDA)
 df = stocks.copy()
@@ -63,6 +66,14 @@ print(company_stats)
 ```
 
 ### Approach
+
+
+filter data
+display as candle stick plot with a liine for each company
+each line can be toggled on and off as it is a plotly object, this allows for quick comparisons of companies
+once data is displayed, we will look for repeating patterns in the data as well as correlate ket historical events to distinct points in the data
+
+
 ``` {python}
 # Step 2: Data Wrangling
 # Handle missing values(No missing values)
@@ -94,7 +105,7 @@ for company in stocks['stock_symbol'].unique():
 fig = go.Figure(data=candlestick_traces)
 
 # Customize the layout
-fig.update_layout(title='Candlestick Chart for 14 Companies',
+fig.update_layout(title='Candlestick Chart for 14 Companies <br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
                   xaxis_title='Date',
                   yaxis_title='Price',
                   xaxis_rangeslider_visible=False,
