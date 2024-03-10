@@ -1,8 +1,16 @@
 ---
 title: "Big Tech Stock Prices"
-subtitle: "Analyzing Big Tech stock prices from 2010 to 2022"
+subtitle: "An analysis of 14 Big Tech stocks from 2010 - 2020"
 author: "Tech Titans"
-format: html
+format: 
+  html:
+    embed-resources: true
+toc: true
+execute:
+  warning: false
+  message: false
+  results: hide 
+  echo: false
 editor: visual
 jupyter: python3
 ---
@@ -67,12 +75,11 @@ print(company_stats)
 
 ### Approach
 
+To begin the analysis of question one, the data is first summarized for basic statistics such as mean, median, standard deviation for both price variation and trading volume. This allows for a basic understanding of the distribution of the data and how metrics such as outliers influence the spread of the data. Once a basic understanding of the data is formed, the data is then visualized. 
 
-filter data
-display as candle stick plot with a liine for each company
-each line can be toggled on and off as it is a plotly object, this allows for quick comparisons of companies
-once data is displayed, we will look for repeating patterns in the data as well as correlate ket historical events to distinct points in the data
+One step that is typically used for raw, uncleaned data is filtering. This allows for the data to be manipulated to ensure a normal distribution (or other distribution required by the ML model). In the case of this analysis, filtering and cleaning is not needed because the data is already in a form that can be visualized easily. 
 
+Finally, the data is visualized in two plots, a candlestick plot and a line plot. The candlestick plot is a line plot where each data point is a bar that shows the open, close, high, and low prices. The size of the bar represents the volume of stocks traded in that day. The bars are then connected by a line and when looking at the entire time frame, trends can be seen. The line plot will be used to show the closing prices over time. These two plots will be plotly objects, and thus can be manipuated and zoomed in on to see trends both globally and regionally over the time period. 
 
 ``` {python}
 # Step 2: Data Wrangling
@@ -105,7 +112,7 @@ for company in stocks['stock_symbol'].unique():
 fig = go.Figure(data=candlestick_traces)
 
 # Customize the layout
-fig.update_layout(title='Candlestick Chart for 14 Companies <br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
+fig.update_layout(title='Stock Prices of Big Tech Stocks (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
                   xaxis_title='Date',
                   yaxis_title='Price',
                   xaxis_rangeslider_visible=False,
