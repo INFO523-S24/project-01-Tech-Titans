@@ -198,8 +198,7 @@ fig.show()
 
 ### Discussion
 
-
-
+The findings from data preprocessing and visualization reveals multiple insights. First, beyond cyclical fluxations, the price of every stock has increased since the initial 2010 open. Additionally, not all companies existed in 2010 and thus it can be seen that some stocks don't appear until after 2010. Another valuable insight found was the large increase in growth of a majority of the companies in 2018. If this trend is to continue, it is beneficial to invest in the market now, though it would be wise to view other companies that have experienced exponential growth and review the times before prices settled to a lower value, the dot com boom of the early 2000s would be a good case study. Finally, the crash caused by the COVID-19 pandemic is clearly visible across all the companies, when in the March of 2020, stock prices plummetted.
 
 ## Q2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.
 
