@@ -137,7 +137,6 @@ fig.show()
 ```
 
 
-Closing Prices Over Time for Different Companies
 ``` {python}
 
 stocks = companies['stock_symbol'].values.tolist()
@@ -167,7 +166,7 @@ fig.show()
 
 
 
-Volume Analysis using Bar Plot
+
 ``` {python}
 # Calculate average volume traded for each stock symbol
 avg_volume = df.groupby('stock_symbol')['volume'].mean().sort_values()
