@@ -32,7 +32,11 @@ companies = pd.read_csv('data/big_tech_companies.csv')
 
 ```
 
+## Introduction to the Dataset
 
+The dataset used in this analysis was sourced from Tidy Tuesday; an open source conglomeration of data for visualization and machine learning. The dataset contains information on 14 different Big Tech companies's stock price and trading volume from 2010 to 2022 on the New York Stock Exchange. There are two .csv (comma seperated variable) files used, one called "big_tech_stock_prices.csv" and another called "big_tech_companies.csv". For simplicity, the files are renamed "stocks" and "companies", respectively. Stocks contains a majority of the information used in this analysis, including the daily low, high, open, and close prices, as well as trading volume. Low price represents the lowest price for the day while high price represents the opposite. Open price represents the price when the market opens at 9:30am ET, and close price represents the price when the market closes at 4pm ET. Trading volume represents the amount of stocks bought and sold that day; this metric is important for understanding the popularity of the stock.
+
+The interest in this dataset was sparked by its potential to provide valuable insights into the stock market behavior of big tech companies. This enables a comprehensive examination of stock market trends, facilitates comparisons across various companies, and aids in assessing the influence of significant external events on stock valuations.
 
 
 ## Q1: How do stock prices change over time, looking at the basic information like open, close, high, low etc.**
