@@ -205,6 +205,11 @@ Looking at the bar plot of all companies, it is clear that Apple was the most po
 
 
 ### Introduction
+
+A fundamental question for any investor is understanding how an initial investment grows over time. This analysis aims to determine the value of an investment made in 2010 in various technology stocks and its worth in 2022. To answer this, we'll need the historical closing prices of each stock, which will help us to calculate the investment's growth over the specified period. The second part of the analysis aims to determine good and bad times to pull an investment out of the market.
+
+First, we're loading up all the stock and company information from two CSV files. We then make copies of this data to work with, ensuring we don't mess with the original files. The goal here is to gather basic statistics like the average, median, highest, lowest, and standard deviation for various aspects of the stock prices, such as the opening and closing prices. This provides us with a summary that gives a broad overview of each stock's performance over time.
+
 ``` {python}
 #| label: Data-Analysis-Q2
 
@@ -228,7 +233,8 @@ print(investment_stats)
 
 ```
 
-### Approach
+Next, we're double-checking to make sure our data doesn't have any gaps (missing values). Then, we're doing some detective work to spot any weird or extreme data points—what we call 'outliers'—that might throw off our analysis. We use the method Z-score to find these outliers, which helps us measure how unusual a data point is. If it's too far from what's normal (more than 3 standard deviations), we remove it to keep our data clean.
+
 ``` {python}
 #| label: Data-Wrangling-Q2
 
@@ -244,7 +250,24 @@ df_stocks = df_stocks[df_stocks['z_score'].abs() <= 3]
 
 ```
 
+
+### Approach
+
+To understand how an investment has grown, we'll look at the stock prices at the start of 2010 and compare them to the end of 2022. We'll adjust these prices so that they all start at the same point, which makes it fair to compare different stocks. This way, we're not distracted by some stocks being naturally more expensive than others; we're focusing purely on how much they have grown proportionally.
+
+We're going to use line charts to show this growth over time. Each company's growth curve will have its own color, making it easy to see which stocks are stars and which are not. These charts help us spot the times when stocks were soaring and when they were not doing so well.
+
+To understand when to buy or sell a stock, we'll use a common technique called the moving average crossover. Think of this as tracking two different running averages of a stock's price: one that looks at the last 50 days (short-term view) and another that looks at the last 200 days (long-term view). When the short-term line crosses above the long-term line, it’s like a green light that the stock's price might be heading up—a hint that it might be a good time to buy. When it crosses below, it’s a red flag that prices could be going down, suggesting it might be time to sell.
+
+We'll map these two averages onto a chart, which will help us spot exactly where these crossovers happen. It’s a straightforward method but well-regarded in the finance world for spotting when a stock's trend might be changing direction.
+
+Our analysis will calculate these two averages for each stock and lay them over a chart of the stock's actual prices. We're looking for where these average lines cross over each other—these are the critical moments that might signal to investors to act. To showcase this, we'll use a type of chart called a candlestick chart, which is great for showing not just the average trends, but also giving us a detailed snapshot of stock price movements over time.
+
 ### Analysis
+
+Let's assume we put $1,000 into each stock at the beginning of 2010. We'll use our adjusted prices to track how much that $1,000 would have turned into by 2022. By looking at the charts for each stock, we can see the final tally for our investment as of 2022, giving us a clear picture of where our hypothetical $1,000 would have taken us over 12 years.
+
+
 ```{python}
 #| label: Stock-Close-Prices-Over-Time
 stocks = companies['stock_symbol'].values.tolist()
@@ -271,6 +294,8 @@ fig.update_layout(
 # Show the figure
 fig.show()
 ```
+
+In this part, We take the list of stock symbols and create a line graph for each stock that shows how its closing price has changed day by day. The result is a colorful chart where each line represents a company's stock, making it easy to see how stock prices have moved over time.
 
 ```{python}
 #| label: Normalized-Stock-Close-Prices
@@ -304,15 +329,7 @@ fig.show()
 
 ```
 
-To answer the question "when would be a good/bad time to pull investment out of the market? " we rely on a common trading strategy based on moving averages:
-
-The 50-day moving average (50DMA) is often used as a short-term trend indicator. It’s more sensitive to price changes in the recent past.
-
-The 200-day moving average (200DMA) is commonly used as a long-term trend indicator. It’s less sensitive to daily price fluctuations and more indicative of a longer-term trend.
-
-When the 50DMA crosses above the 200DMA, it's often referred to as a "golden cross," which some traders interpret as a bullish signal suggesting that the price might increase, potentially a good time to buy.
-
-Conversely, when the 50DMA crosses below the 200DMA, it's known as a "death cross," which is considered by some traders to be a bearish signal, indicating that the price might drop, and it could be a good time to sell.
+In this part, we're starting all the stocks from the same line ('normalization'), so we can compare them fairly. Imagine every stock begins at $10 in 2010, and we track how this value changes. This gives us a clear picture of each stock's performance relative to the others, regardless of their actual price differences. We draw this out on a chart, so it's easy to follow their growth over the years.
 
 ``` {python}
 #| label: Data-Visualization-Q2-Part2
@@ -355,5 +372,7 @@ fig.update_layout(title='Stock Price with 200DMA and 50DMA',
 # Show the figure
 fig.show()
 ```
+
+In this part, we're focusing on Apple's stock (AAPL) as an example, and we're using two smoothed-out lines to help us decide when might be a good time to buy or sell. These lines represent the average closing price over the last 50 and 200 days. We plot these on a special kind of graph called a 'candlestick chart', which not only shows the average trends but also the daily price movements in more detail. This chart helps us spot those key moments where the short-term average crosses over the long-term average, which can signal whether it's potentially a good time to get in or out of the market.
 
 ### Discussion (move text from above down here)
