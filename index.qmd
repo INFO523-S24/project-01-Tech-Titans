@@ -5,6 +5,9 @@ author: "Tech Titans"
 format: 
   html:
     embed-resources: true
+    include-in-header: 
+        - text: |
+            <style>figure { padding: 3em 0 3em 0; }</style
 toc: true
 execute:
   warning: false
@@ -81,15 +84,7 @@ One step that is typically used for raw, uncleaned data is filtering. This allow
 
 Finally, the data is visualized in three plots, a candlestick plot, a line plot, and a bar plot. The candlestick plot is a line plot where each data point is a bar that shows the open, close, high, and low prices. The size of the bar represents the volume of stocks traded in that day. The bars are then connected by a line and when looking at the entire time frame, trends can be seen. The line plot will be used to show the closing prices over time. The bar plot will show the overall volume of trading of each stock in the entire time frame. These three plots will be plotly objects, and thus can be manipuated and zoomed in on to see trends both globally and regionally over the time period. The candle stick will provide a convient display of all the data, while the line and bar plots break down the candle stick plot to scrutinize the data on a magnified scale. 
 
-``` {python}
-# Step 2: Data Wrangling
-# Handle missing values(No missing values)
-
-
-```
-
 ### Analysis
-
 
 
 ``` {python}
@@ -112,15 +107,15 @@ for company in stocks['stock_symbol'].unique():
 fig = go.Figure(data=candlestick_traces)
 
 # Customize the layout
-fig.update_layout(title='Stock Prices of Big Tech Stocks (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
+fig.update_layout(title='Stock Prices of Big Tech Stocks (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023</sup>',
                   xaxis_title='Date',
                   yaxis_title='Price',
                   xaxis_rangeslider_visible=False,
-                  height=600,
-                  width=1000)
+                  width=1000,
+                  margin=dict(l=40, r=40, t=60, b=20)
+                  )
 
 # Show the figure
-fig.update_layout(margin=dict(t=100))
 fig.show()
 
 
@@ -136,6 +131,9 @@ fig.show()
 
 
 ```
+
+
+
 
 
 ``` {python}
@@ -155,16 +153,19 @@ for stock in stocks:
 
 # Customize the layout
 fig.update_layout(
-    title='Stock Close Prices Over Time (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
+    title='Stock Close Prices Over Time (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023</sup>',
     xaxis_title='Date',
     yaxis_title='Close Price',
-    height=400
+    height=600,
+    margin=dict(l=40, r=40, t=60, b=20)
 )
 
 # Show the figure
-fig.update_layout(margin=dict(t=100))
+
 fig.show()
 ```
+
+
 
 
 
@@ -182,7 +183,7 @@ bar_trace = go.Bar(
 
 # Create a layout
 layout = go.Layout(
-    title='Average Volume Traded per Year for Each Stock Symbol <br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
+    title='Average Volume Traded per Year for Each Stock Symbol <br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023</sup>',
     xaxis=dict(title='Stock Symbol'),
     yaxis=dict(title='Average Volume (Shares Traded)'),
     xaxis_tickangle=-45,
@@ -193,7 +194,6 @@ layout = go.Layout(
 fig = go.Figure(data=[bar_trace], layout=layout)
 
 # Show the figure
-fig.update_layout(margin=dict(t=100))
 fig.show()
 
 ```
