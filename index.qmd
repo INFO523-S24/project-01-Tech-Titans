@@ -5,9 +5,6 @@ author: "Tech Titans"
 format: 
   html:
     embed-resources: true
-    include-in-header: 
-        - text: |
-            <style>figure { padding: 3em 0 3em 0; }</style
 toc: true
 execute:
   warning: false

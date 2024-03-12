@@ -47,15 +47,13 @@ plt.rcParams['figure.figsize'] = (6, 6 * 0.618)
 
 ```
 
-# Using Quarto for presentations
-
-## Quarto
+## Introducing the Dataset
 
 -   The presentation is created using the Quarto CLI
 
 -   `##` sets the start of a new slide
 
-## Layouts
+## Question 1: 
 
 You can use plain text
 
@@ -74,6 +72,23 @@ or in two columns
 -   like
 
 -   this
+
+## Candle Stick Plot
+
+
+## Line Plot and Bar Plot
+
+
+## Question 2:
+
+## Normalized Stock Price over Time
+
+## 50, 200 Day Moving Averages 
+
+## Conclusion
+
+## Thank You!
+
 
 ## Code
 
