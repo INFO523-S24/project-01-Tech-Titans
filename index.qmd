@@ -375,7 +375,7 @@ fig.show()
 
 In this part, we're focusing on Apple's stock (AAPL) as an example, and we're using two smoothed-out lines to help us decide when might be a good time to buy or sell. These lines represent the average closing price over the last 50 and 200 days. We plot these on a special kind of graph called a 'candlestick chart', which not only shows the average trends but also the daily price movements in more detail. This chart helps us spot those key moments where the short-term average crosses over the long-term average, which can signal whether it's potentially a good time to get in or out of the market.
 
-### Discussion (move text from above down here)
+### Discussion
 
 Insights into investment strategies and market dynamics.
 
