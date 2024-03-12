@@ -1,5 +1,5 @@
 ---
-title: "Project title"
+title: "Analysis of Big Tech Stock Prices"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
 author: "Author names"
 title-slide-attributes:
