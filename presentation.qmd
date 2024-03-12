@@ -5,12 +5,11 @@ author: "Christian Ortmann, Roxana Akbarsharifi, Abhishek Kumar, Shashank Yadav,
 title-slide-attributes:
   data-background-image: images/stock_market.jpeg
   data-background-size: stretch
-  data-background-opacity: "0.7"
+  data-background-opacity: "0.5"
   data-slide-number: none
 format:
   revealjs:
     theme:  ['data/customtheming.scss']
-  
 editor: visual
 jupyter: python3
 execute:
