@@ -45,10 +45,7 @@ plt.rcParams['figure.figsize'] = (6, 6 * 0.618)
 #| label: load-data
 #| include: false
 # Load data in Python
-mtcars = sns.load_dataset('mpg').dropna()  # mtcars dataset is similar to the mpg dataset from seaborn
-mtcars['speed'] = mtcars['horsepower'] / mtcars['weight']
 
-penguins = sns.load_dataset('penguins').dropna()
 ```
 
 # Using Quarto for presentations
@@ -87,23 +84,23 @@ import statsmodels.api as sm
 import pandas as pd
 
 # Fit a linear regression model
-X = mtcars[['speed']]
-y = mtcars['mpg']
-model = LinearRegression().fit(X, y)
+#X = mtcars[['speed']]
+#y = mtcars['mpg']
+#model = LinearRegression().fit(X, y)
 
 # Summary of the model
-X2 = sm.add_constant(X)
-est = sm.OLS(y, X2)
-est2 = est.fit()
-print(est2.summary())
+#X2 = sm.add_constant(X)
+#est = sm.OLS(y, X2)
+#est2 = est.fit()
+#print(est2.summary())
 ```
 
 ## Plots
 
 ```{python}
-penguins['species'] = penguins['species'].apply(lambda x: "Adelie" if x == "Adelie" else "Other")
-sns.scatterplot(data=penguins, x='flipper_length_mm', y='body_mass_g', hue='species')
-plt.show()
+#penguins['species'] = penguins['species'].apply(lambda x: #"Adelie" if x == "Adelie" else "Other")
+#sns.scatterplot(data=penguins, x='flipper_length_mm', #y='body_mass_g', hue='species')
+#plt.show()
 ```
 
 ## Plot and text
@@ -119,9 +116,7 @@ plt.show()
 ```{python}
 #| warning: false
 #| fig.width: 5.5
-fig, ax = plt.subplots(figsize=(5.5, 5.5 * 0.618))
-sns.boxplot(data=penguins, x='bill_length_mm', y='species', hue='species', ax=ax)
-plt.show()
+
 ```
 :::
 :::
@@ -133,7 +128,7 @@ plt.show()
 If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
 
 ```{python}
-penguins.head().to_html()
+
 ```
 
 ## Images
