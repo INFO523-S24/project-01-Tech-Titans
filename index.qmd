@@ -120,6 +120,7 @@ fig.update_layout(title='Stock Prices of Big Tech Stocks (2010 - 2022)<br><sup>K
                   width=1000)
 
 # Show the figure
+fig.update_layout(margin=dict(t=25))
 fig.show()
 
 
@@ -154,13 +155,14 @@ for stock in stocks:
 
 # Customize the layout
 fig.update_layout(
-    title='Stock Close Prices Over Time',
+    title='Stock Close Prices Over Time (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
     xaxis_title='Date',
     yaxis_title='Close Price',
     height=400
 )
 
 # Show the figure
+fig.update_layout(margin=dict(t=25))
 fig.show()
 ```
 
@@ -180,7 +182,7 @@ bar_trace = go.Bar(
 
 # Create a layout
 layout = go.Layout(
-    title='Average Volume Traded for Each Stock Symbol',
+    title='Average Volume Traded per Year for Each Stock Symbol <br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023',
     xaxis=dict(title='Stock Symbol'),
     yaxis=dict(title='Average Volume (Shares Traded)'),
     xaxis_tickangle=-45,
@@ -191,6 +193,7 @@ layout = go.Layout(
 fig = go.Figure(data=[bar_trace], layout=layout)
 
 # Show the figure
+fig.update_layout(margin=dict(t=25))
 fig.show()
 
 ```

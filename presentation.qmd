@@ -1,9 +1,9 @@
 ---
 title: "Analysis of Big Tech Stock Prices"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
-author: "Author names"
+author: "Christian Ortmann, Roxana Akbarsharifi, Abhishek Kumar, Shashank Yadav, Gorantla Sai Laasya, Divya Liladhar Dhole"
 title-slide-attributes:
-  data-background-image: images/watercolour_sys02_img34_teacup-ocean.jpg
+  data-background-image: images/stock_market.jpeg
   data-background-size: stretch
   data-background-opacity: "0.7"
   data-slide-number: none
