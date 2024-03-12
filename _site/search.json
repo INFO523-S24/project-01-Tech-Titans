@@ -74,21 +74,84 @@
     "href": "index.html#q2-backwards-verification-if-we-invested-x-amount-of-dollars-in-2010-how-much-would-it-be-worth-in-2022-when-would-be-a-goodbad-time-to-pull-investment-out-of-the-market.",
     "title": "Big Tech Stock Prices",
     "section": "Q2 Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.",
-    "text": "Q2 Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.\n\nIntroduction\nA fundamental question for any investor is understanding how an initial investment grows over time. This analysis aims to determine the value of an investment made in 2010 in various technology stocks and its worth in 2022. To answer this, we’ll need the historical closing prices of each stock, which will help us to calculate the investment’s growth over the specified period. The second part of the analysis aims to determine good and bad times to pull an investment out of the market.\nFirst, we’re loading up all the stock and company information from two CSV files. We then make copies of this data to work with, ensuring we don’t mess with the original files. The goal here is to gather basic statistics like the average, median, highest, lowest, and standard deviation for various aspects of the stock prices, such as the opening and closing prices. This provides us with a summary that gives a broad overview of each stock’s performance over time.\n\n\nSummary Statistics:\n                    open                                                 \\\n                    mean      median        min         max         std   \nstock_symbol                                                              \nAAPL           51.274171   29.745001   6.870357  182.630005   47.316509   \nADBE          186.023938   97.589996  22.969999  696.280029  173.562115   \nAMZN           58.937204   36.325001   5.296500  187.199997   54.138607   \nCRM           103.419948   76.290001  15.522500  310.000000   71.287894   \nCSCO           33.493880   29.500000  13.930000   64.040001   12.643887   \nGOOGL          49.149625   38.521000  10.968719  151.250000   35.809816   \nIBM           148.427471  143.173996  90.439774  205.908218   23.998357   \nINTC           36.481406   34.270000  17.879999   68.199997   12.912534   \nMETA          147.874275  141.620002  18.080000  381.679993   86.734656   \nMSFT          100.048490   55.660000  23.090000  344.619995   88.228008   \nNFLX          188.242206  110.010002   6.960000  692.349976  178.967463   \nNVDA           50.560335   11.902500   2.180000  335.170013   69.538684   \nORCL           46.242177   41.750000  21.459999  104.290001   16.864193   \nTSLA           58.859467   16.229000   1.076000  411.470001   95.677282   \n\n                    high                                                 ...  \\\n                    mean      median        min         max         std  ...   \nstock_symbol                                                             ...   \nAAPL           51.845876   29.980000   7.000000  182.940002   47.926721  ...   \nADBE          188.208985   98.239998  23.360001  699.539978  175.674664  ...   \nAMZN           59.610805   36.500000   5.564500  188.654007   54.785319  ...   \nCRM           104.720219   77.160004  15.625000  311.750000   72.149412  ...   \nCSCO           33.804014   29.770000  14.120000   64.290001   12.760317  ...   \nGOOGL          49.638485   38.930000  11.068068  151.546494   36.215672  ...   \nIBM           149.571376  144.160004  93.441681  206.405350   24.013109  ...   \nINTC           36.875197   34.580002  17.920000   69.290001   13.090012  ...   \nMETA          149.757980  143.415000  18.270000  384.329987   87.818979  ...   \nMSFT          101.039621   56.000000  23.320000  349.670013   89.181105  ...   \nNFLX          191.178020  111.900002   7.178571  700.989990  181.488846  ...   \nNVDA           51.504697   11.982500   2.262500  346.470001   70.979752  ...   \nORCL           46.696918   42.000000  21.680000  106.339996   17.059092  ...   \nTSLA           60.174863   16.491000   1.108667  414.496674   97.873400  ...   \n\n               adj_close                                                 \\\n                    mean      median        min         max         std   \nstock_symbol                                                              \nAAPL           49.445122   27.385101   5.846675  180.959732   47.810585   \nADBE          186.022299   97.720001  22.690001  688.369995  173.466083   \nAMZN           58.905287   36.382500   5.430500  186.570496   54.085034   \nCRM           103.400510   76.260002  15.520000  309.959991   71.213839   \nCSCO           28.624463   23.570276   9.743538   61.521923   13.590111   \nGOOGL          49.148954   38.538502  10.912663  149.838501   35.803048   \nIBM           113.148579  113.695961  75.138626  150.570007   14.336266   \nINTC           31.310983   28.492294  12.135988   64.383247   13.745841   \nMETA          147.913244  142.065002  17.730000  382.179993   86.763257   \nMSFT           95.285446   50.052330  17.769510  339.924835   89.253596   \nNFLX          188.252178  110.099998   7.018571  691.690002  178.877130   \nNVDA           50.282939   11.685297   2.037410  333.407379   69.495321   \nORCL           42.572566   37.007454  17.991089  101.501656   17.867223   \nTSLA           58.805222   16.222334   1.053333  409.970001   95.544413   \n\n                    volume                                                   \n                      mean       median       min         max           std  \nstock_symbol                                                                 \nAAPL          2.563255e+08  166674000.0  35195900  1880998000  2.225768e+08  \nADBE          3.814337e+06    2948500.0    589200   108752400  3.598144e+06  \nAMZN          8.833999e+07   74592000.0  17626000   848422000  5.309249e+07  \nCRM           6.910973e+06    5548800.0   1084700    64562800  5.048860e+06  \nCSCO          3.269656e+07   25482400.0   5720500   560040200  2.570963e+07  \nGOOGL         6.018647e+07   41234000.0   9312000   592399008  4.957963e+07  \nIBM           5.036545e+06    4345189.0   1247878    39814421  2.772073e+06  \nINTC          3.607170e+07   29874600.0   5893800   199002600  2.123178e+07  \nMETA          3.117815e+07   23239000.0   5913100   573576400  2.713267e+07  \nMSFT          3.801647e+07   32280800.0   7425600   319317900  2.147328e+07  \nNFLX          1.841485e+07   11961800.0   1144000   315541800  2.054316e+07  \nNVDA          5.080613e+07   43395600.0   4564400   369292800  3.210953e+07  \nORCL          1.801856e+07   14699800.0   2754900   183503900  1.251053e+07  \nTSLA          9.351647e+07   75914250.0   1777500   914082000  8.164780e+07  \n\n[14 rows x 30 columns]\n\n\nNext, we’re double-checking to make sure our data doesn’t have any gaps (missing values). Then, we’re doing some detective work to spot any weird or extreme data points—what we call ‘outliers’—that might throw off our analysis. We use the method Z-score to find these outliers, which helps us measure how unusual a data point is. If it’s too far from what’s normal (more than 3 standard deviations), we remove it to keep our data clean.\n\n\nNull Values from Stocks dataset stock_symbol    0\ndate            0\nopen            0\nhigh            0\nlow             0\nclose           0\nadj_close       0\nvolume          0\ndtype: int64\nNull Values from companies dataset stock_symbol    0\ncompany         0\ndtype: int64\n\n\n\n\nApproach\nTo understand how an investment has grown, we’ll look at the stock prices at the start of 2010 and compare them to the end of 2022. We’ll adjust these prices so that they all start at the same point, which makes it fair to compare different stocks. This way, we’re not distracted by some stocks being naturally more expensive than others; we’re focusing purely on how much they have grown proportionally.\nWe’re going to use line charts to show this growth over time. Each company’s growth curve will have its own color, making it easy to see which stocks are stars and which are not. These charts help us spot the times when stocks were soaring and when they were not doing so well.\nTo understand when to buy or sell a stock, we’ll use a common technique called the moving average crossover. Think of this as tracking two different running averages of a stock’s price: one that looks at the last 50 days (short-term view) and another that looks at the last 200 days (long-term view). When the short-term line crosses above the long-term line, it’s like a green light that the stock’s price might be heading up—a hint that it might be a good time to buy. When it crosses below, it’s a red flag that prices could be going down, suggesting it might be time to sell.\nWe’ll map these two averages onto a chart, which will help us spot exactly where these crossovers happen. It’s a straightforward method but well-regarded in the finance world for spotting when a stock’s trend might be changing direction.\nOur analysis will calculate these two averages for each stock and lay them over a chart of the stock’s actual prices. We’re looking for where these average lines cross over each other—these are the critical moments that might signal to investors to act. To showcase this, we’ll use a type of chart called a candlestick chart, which is great for showing not just the average trends, but also giving us a detailed snapshot of stock price movements over time.\n\n\nAnalysis\nLet’s assume we put $1,000 into each stock at the beginning of 2010. We’ll use our adjusted prices to track how much that $1,000 would have turned into by 2022. By looking at the charts for each stock, we can see the final tally for our investment as of 2022, giving us a clear picture of where our hypothetical $1,000 would have taken us over 12 years.\n\n\n                                                \n\n\nIn this part, We take the list of stock symbols and create a line graph for each stock that shows how its closing price has changed day by day. The result is a colorful chart where each line represents a company’s stock, making it easy to see how stock prices have moved over time.\n\n\n                                                \n\n\nIn this part, we’re starting all the stocks from the same line (‘normalization’), so we can compare them fairly. Imagine every stock begins at $10 in 2010, and we track how this value changes. This gives us a clear picture of each stock’s performance relative to the others, regardless of their actual price differences. We draw this out on a chart, so it’s easy to follow their growth over the years.\n\n\n                                                \n\n\nIn this part, we’re focusing on Apple’s stock (AAPL) as an example, and we’re using two smoothed-out lines to help us decide when might be a good time to buy or sell. These lines represent the average closing price over the last 50 and 200 days. We plot these on a special kind of graph called a ‘candlestick chart’, which not only shows the average trends but also the daily price movements in more detail. This chart helps us spot those key moments where the short-term average crosses over the long-term average, which can signal whether it’s potentially a good time to get in or out of the market.\n\n\nDiscussion (move text from above down here)"
+    "text": "Q2 Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market.\n\nIntroduction\nA fundamental question for any investor is understanding how an initial investment grows over time. This analysis aims to determine the value of an investment made in 2010 in various technology stocks and its worth in 2022. To answer this, we’ll need the historical closing prices of each stock, which will help us to calculate the investment’s growth over the specified period. The second part of the analysis aims to determine good and bad times to pull an investment out of the market.\nFirst, we’re loading up all the stock and company information from two CSV files. We then make copies of this data to work with, ensuring we don’t mess with the original files. The goal here is to gather basic statistics like the average, median, highest, lowest, and standard deviation for various aspects of the stock prices, such as the opening and closing prices. This provides us with a summary that gives a broad overview of each stock’s performance over time.\n\n\nSummary Statistics:\n                    open                                                 \\\n                    mean      median        min         max         std   \nstock_symbol                                                              \nAAPL           51.274171   29.745001   6.870357  182.630005   47.316509   \nADBE          186.023938   97.589996  22.969999  696.280029  173.562115   \nAMZN           58.937204   36.325001   5.296500  187.199997   54.138607   \nCRM           103.419948   76.290001  15.522500  310.000000   71.287894   \nCSCO           33.493880   29.500000  13.930000   64.040001   12.643887   \nGOOGL          49.149625   38.521000  10.968719  151.250000   35.809816   \nIBM           148.427471  143.173996  90.439774  205.908218   23.998357   \nINTC           36.481406   34.270000  17.879999   68.199997   12.912534   \nMETA          147.874275  141.620002  18.080000  381.679993   86.734656   \nMSFT          100.048490   55.660000  23.090000  344.619995   88.228008   \nNFLX          188.242206  110.010002   6.960000  692.349976  178.967463   \nNVDA           50.560335   11.902500   2.180000  335.170013   69.538684   \nORCL           46.242177   41.750000  21.459999  104.290001   16.864193   \nTSLA           58.859467   16.229000   1.076000  411.470001   95.677282   \n\n                    high                                                 ...  \\\n                    mean      median        min         max         std  ...   \nstock_symbol                                                             ...   \nAAPL           51.845876   29.980000   7.000000  182.940002   47.926721  ...   \nADBE          188.208985   98.239998  23.360001  699.539978  175.674664  ...   \nAMZN           59.610805   36.500000   5.564500  188.654007   54.785319  ...   \nCRM           104.720219   77.160004  15.625000  311.750000   72.149412  ...   \nCSCO           33.804014   29.770000  14.120000   64.290001   12.760317  ...   \nGOOGL          49.638485   38.930000  11.068068  151.546494   36.215672  ...   \nIBM           149.571376  144.160004  93.441681  206.405350   24.013109  ...   \nINTC           36.875197   34.580002  17.920000   69.290001   13.090012  ...   \nMETA          149.757980  143.415000  18.270000  384.329987   87.818979  ...   \nMSFT          101.039621   56.000000  23.320000  349.670013   89.181105  ...   \nNFLX          191.178020  111.900002   7.178571  700.989990  181.488846  ...   \nNVDA           51.504697   11.982500   2.262500  346.470001   70.979752  ...   \nORCL           46.696918   42.000000  21.680000  106.339996   17.059092  ...   \nTSLA           60.174863   16.491000   1.108667  414.496674   97.873400  ...   \n\n               adj_close                                                 \\\n                    mean      median        min         max         std   \nstock_symbol                                                              \nAAPL           49.445122   27.385101   5.846675  180.959732   47.810585   \nADBE          186.022299   97.720001  22.690001  688.369995  173.466083   \nAMZN           58.905287   36.382500   5.430500  186.570496   54.085034   \nCRM           103.400510   76.260002  15.520000  309.959991   71.213839   \nCSCO           28.624463   23.570276   9.743538   61.521923   13.590111   \nGOOGL          49.148954   38.538502  10.912663  149.838501   35.803048   \nIBM           113.148579  113.695961  75.138626  150.570007   14.336266   \nINTC           31.310983   28.492294  12.135988   64.383247   13.745841   \nMETA          147.913244  142.065002  17.730000  382.179993   86.763257   \nMSFT           95.285446   50.052330  17.769510  339.924835   89.253596   \nNFLX          188.252178  110.099998   7.018571  691.690002  178.877130   \nNVDA           50.282939   11.685297   2.037410  333.407379   69.495321   \nORCL           42.572566   37.007454  17.991089  101.501656   17.867223   \nTSLA           58.805222   16.222334   1.053333  409.970001   95.544413   \n\n                    volume                                                   \n                      mean       median       min         max           std  \nstock_symbol                                                                 \nAAPL          2.563255e+08  166674000.0  35195900  1880998000  2.225768e+08  \nADBE          3.814337e+06    2948500.0    589200   108752400  3.598144e+06  \nAMZN          8.833999e+07   74592000.0  17626000   848422000  5.309249e+07  \nCRM           6.910973e+06    5548800.0   1084700    64562800  5.048860e+06  \nCSCO          3.269656e+07   25482400.0   5720500   560040200  2.570963e+07  \nGOOGL         6.018647e+07   41234000.0   9312000   592399008  4.957963e+07  \nIBM           5.036545e+06    4345189.0   1247878    39814421  2.772073e+06  \nINTC          3.607170e+07   29874600.0   5893800   199002600  2.123178e+07  \nMETA          3.117815e+07   23239000.0   5913100   573576400  2.713267e+07  \nMSFT          3.801647e+07   32280800.0   7425600   319317900  2.147328e+07  \nNFLX          1.841485e+07   11961800.0   1144000   315541800  2.054316e+07  \nNVDA          5.080613e+07   43395600.0   4564400   369292800  3.210953e+07  \nORCL          1.801856e+07   14699800.0   2754900   183503900  1.251053e+07  \nTSLA          9.351647e+07   75914250.0   1777500   914082000  8.164780e+07  \n\n[14 rows x 30 columns]\n\n\nNext, we’re double-checking to make sure our data doesn’t have any gaps (missing values). Then, we’re doing some detective work to spot any weird or extreme data points—what we call ‘outliers’—that might throw off our analysis. We use the method Z-score to find these outliers, which helps us measure how unusual a data point is. If it’s too far from what’s normal (more than 3 standard deviations), we remove it to keep our data clean.\n\n\nNull Values from Stocks dataset stock_symbol    0\ndate            0\nopen            0\nhigh            0\nlow             0\nclose           0\nadj_close       0\nvolume          0\ndtype: int64\nNull Values from companies dataset stock_symbol    0\ncompany         0\ndtype: int64\n\n\n\n\nApproach\nTo understand how an investment has grown, we’ll look at the stock prices at the start of 2010 and compare them to the end of 2022. We’ll adjust these prices so that they all start at the same point, which makes it fair to compare different stocks. This way, we’re not distracted by some stocks being naturally more expensive than others; we’re focusing purely on how much they have grown proportionally.\nWe’re going to use line charts to show this growth over time. Each company’s growth curve will have its own color, making it easy to see which stocks are stars and which are not. These charts help us spot the times when stocks were soaring and when they were not doing so well.\nTo understand when to buy or sell a stock, we’ll use a common technique called the moving average crossover. Think of this as tracking two different running averages of a stock’s price: one that looks at the last 50 days (short-term view) and another that looks at the last 200 days (long-term view). When the short-term line crosses above the long-term line, it’s like a green light that the stock’s price might be heading up—a hint that it might be a good time to buy. When it crosses below, it’s a red flag that prices could be going down, suggesting it might be time to sell.\nWe’ll map these two averages onto a chart, which will help us spot exactly where these crossovers happen. It’s a straightforward method but well-regarded in the finance world for spotting when a stock’s trend might be changing direction.\nOur analysis will calculate these two averages for each stock and lay them over a chart of the stock’s actual prices. We’re looking for where these average lines cross over each other—these are the critical moments that might signal to investors to act. To showcase this, we’ll use a type of chart called a candlestick chart, which is great for showing not just the average trends, but also giving us a detailed snapshot of stock price movements over time.\n\n\nAnalysis\nLet’s assume we put $1,000 into each stock at the beginning of 2010. We’ll use our adjusted prices to track how much that $1,000 would have turned into by 2022. By looking at the charts for each stock, we can see the final tally for our investment as of 2022, giving us a clear picture of where our hypothetical $1,000 would have taken us over 12 years.\n\n\n                                                \n\n\nIn this part, We take the list of stock symbols and create a line graph for each stock that shows how its closing price has changed day by day. The result is a colorful chart where each line represents a company’s stock, making it easy to see how stock prices have moved over time.\n\n\n                                                \n\n\nIn this part, we’re starting all the stocks from the same line (‘normalization’), so we can compare them fairly. Imagine every stock begins at $10 in 2010, and we track how this value changes. This gives us a clear picture of each stock’s performance relative to the others, regardless of their actual price differences. We draw this out on a chart, so it’s easy to follow their growth over the years.\n\n\n                                                \n\n\nIn this part, we’re focusing on Apple’s stock (AAPL) as an example, and we’re using two smoothed-out lines to help us decide when might be a good time to buy or sell. These lines represent the average closing price over the last 50 and 200 days. We plot these on a special kind of graph called a ‘candlestick chart’, which not only shows the average trends but also the daily price movements in more detail. This chart helps us spot those key moments where the short-term average crosses over the long-term average, which can signal whether it’s potentially a good time to get in or out of the market.\n\n\nDiscussion\nInsights into investment strategies and market dynamics.\nBy leveraging historical market data and DMA models, we gained a understanding of how different investment options perform over time. This allowed us to identify trends and patterns that could inform investment decisions, such as identifying stocks with consistent growth or bonds with stable returns. There are a few perceptions on the visualizations. In 2010, IBM stood out with the highest close price among the companies analyzed. From 2018 to 2022, there was a notable exponential growth in stock close prices. By 2021, both Netflix and ADE were nearly on par with their close prices. However, they both experienced declines afterward. Apart from Tesla and Netflix, the other companies remained relatively stable in their normalized stock market performance. Netflix maintained stability in its stock market performance.\nMarket conditions are subject to change, and unforeseen events or economic factors can impact investment performance. Therefore, it’s essential for investors to continuously monitor and adapt their strategies in response to evolving market dynamics. Analyzing daily price data using the 200-day moving average (DMA) and the 50-day DMA method revealed that the 50 DMA consistently showed stronger pricing performance compared to the 200 DMA."
   },
   {
-    "objectID": "presentation.html#quarto",
-    "href": "presentation.html#quarto",
+    "objectID": "presentation.html#introducing-the-dataset",
+    "href": "presentation.html#introducing-the-dataset",
     "title": "Analysis of Big Tech Stock Prices",
-    "section": "Quarto",
-    "text": "Quarto\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+    "section": "Introducing the Dataset",
+    "text": "Introducing the Dataset\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
   },
   {
-    "objectID": "presentation.html#layouts",
-    "href": "presentation.html#layouts",
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
     "title": "Analysis of Big Tech Stock Prices",
-    "section": "Layouts",
-    "text": "Layouts\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+    "section": "Question 1:",
+    "text": "Question 1:\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+  },
+  {
+    "objectID": "presentation.html#candle-stick-plot",
+    "href": "presentation.html#candle-stick-plot",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Candle Stick Plot",
+    "text": "Candle Stick Plot"
+  },
+  {
+    "objectID": "presentation.html#line-plot-and-bar-plot",
+    "href": "presentation.html#line-plot-and-bar-plot",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Line Plot and Bar Plot",
+    "text": "Line Plot and Bar Plot"
+  },
+  {
+    "objectID": "presentation.html#insights",
+    "href": "presentation.html#insights",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Insights",
+    "text": "Insights"
+  },
+  {
+    "objectID": "presentation.html#question-2",
+    "href": "presentation.html#question-2",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Question 2:",
+    "text": "Question 2:"
+  },
+  {
+    "objectID": "presentation.html#normalized-stock-price-over-time",
+    "href": "presentation.html#normalized-stock-price-over-time",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Normalized Stock Price over Time",
+    "text": "Normalized Stock Price over Time"
+  },
+  {
+    "objectID": "presentation.html#day-moving-averages",
+    "href": "presentation.html#day-moving-averages",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "50, 200 Day Moving Averages",
+    "text": "50, 200 Day Moving Averages"
+  },
+  {
+    "objectID": "presentation.html#insights-1",
+    "href": "presentation.html#insights-1",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Insights",
+    "text": "Insights"
+  },
+  {
+    "objectID": "presentation.html#conclusion",
+    "href": "presentation.html#conclusion",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Conclusion",
+    "text": "Conclusion"
+  },
+  {
+    "objectID": "presentation.html#thank-you",
+    "href": "presentation.html#thank-you",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Thank You!",
+    "text": "Thank You!"
   },
   {
     "objectID": "presentation.html#code",
@@ -145,82 +208,5 @@
     "title": "About",
     "section": "",
     "text": "This project was developed by [Team: Tech Titans] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nChristian Ortmann: 1st Year, Data Science MS, Researcher in the School of Mining and Mineral Resources\nTeam member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\nTeam member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\nShashank Yadav: 2nd Year, PhD Student, Biomedical Engineering."
-  },
-  {
-    "objectID": "presentation.html#introducing-the-dataset",
-    "href": "presentation.html#introducing-the-dataset",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Introducing the Dataset",
-    "text": "Introducing the Dataset\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
-  },
-  {
-    "objectID": "presentation.html#question-1",
-    "href": "presentation.html#question-1",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Question 1:",
-    "text": "Question 1:\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
-  },
-  {
-    "objectID": "presentation.html#candle-stick-plot",
-    "href": "presentation.html#candle-stick-plot",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Candle Stick Plot",
-    "text": "Candle Stick Plot"
-  },
-  {
-    "objectID": "presentation.html#line-plot-and-bar-plot",
-    "href": "presentation.html#line-plot-and-bar-plot",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Line Plot and Bar Plot",
-    "text": "Line Plot and Bar Plot"
-  },
-  {
-    "objectID": "presentation.html#question-2",
-    "href": "presentation.html#question-2",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Question 2:",
-    "text": "Question 2:"
-  },
-  {
-    "objectID": "presentation.html#normalized-stock-price-over-time",
-    "href": "presentation.html#normalized-stock-price-over-time",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Normalized Stock Price over Time",
-    "text": "Normalized Stock Price over Time"
-  },
-  {
-    "objectID": "presentation.html#day-moving-averages",
-    "href": "presentation.html#day-moving-averages",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "50, 200 Day Moving Averages",
-    "text": "50, 200 Day Moving Averages"
-  },
-  {
-    "objectID": "presentation.html#conclusion",
-    "href": "presentation.html#conclusion",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Conclusion",
-    "text": "Conclusion"
-  },
-  {
-    "objectID": "presentation.html#thank-you",
-    "href": "presentation.html#thank-you",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Thank You!",
-    "text": "Thank You!"
-  },
-  {
-    "objectID": "presentation.html#insights",
-    "href": "presentation.html#insights",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Insights",
-    "text": "Insights"
-  },
-  {
-    "objectID": "presentation.html#insights-1",
-    "href": "presentation.html#insights-1",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Insights",
-    "text": "Insights"
   }
 ]
