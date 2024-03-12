@@ -78,12 +78,16 @@ or in two columns
 
 ## Line Plot and Bar Plot
 
+## Insights
+
 
 ## Question 2:
 
 ## Normalized Stock Price over Time
 
 ## 50, 200 Day Moving Averages 
+
+## Insights
 
 ## Conclusion
 
