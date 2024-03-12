@@ -120,7 +120,7 @@ fig.update_layout(title='Stock Prices of Big Tech Stocks (2010 - 2022)<br><sup>K
                   width=1000)
 
 # Show the figure
-fig.update_layout(margin=dict(t=25))
+fig.update_layout(margin=dict(t=100))
 fig.show()
 
 
@@ -162,7 +162,7 @@ fig.update_layout(
 )
 
 # Show the figure
-fig.update_layout(margin=dict(t=25))
+fig.update_layout(margin=dict(t=100))
 fig.show()
 ```
 
@@ -193,7 +193,7 @@ layout = go.Layout(
 fig = go.Figure(data=[bar_trace], layout=layout)
 
 # Show the figure
-fig.update_layout(margin=dict(t=25))
+fig.update_layout(margin=dict(t=100))
 fig.show()
 
 ```
