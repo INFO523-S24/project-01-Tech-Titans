@@ -123,7 +123,7 @@
     "href": "presentation.html#insights-1",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Insights",
-    "text": "Insights\n\n\nThe Tesla’s stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.\n\n\n\n\nThe 50-DMA of the stock price consistently exceeds the 200-DMA.\n\n\n\n\nThe Netflix is another example where 200-DMA stock price is more than 50-DMA."
+    "text": "Insights\n\n\nFrom January 2012 to January 2022, Tesla’s stock price experienced significant growth, increasing by a factor of 10 when normalized. At the beginning of this period, in January 2012, the stock price stood at 11.25, while by January 2022, it had surged to 2,412.”\n\n\n\n\nWhenever the 50-day moving average (DMA) crosses above the 200-day moving average (DMA) during an uptrend, the stock rises, and when the 50 DMA crosses below the 200 DMA during a downtrend, the stock declines.\n\n\n\n\nThe Netflix is another example where 200-DMA stock price is more than 50-DMA."
   },
   {
     "objectID": "presentation.html#conclusion",
@@ -144,13 +144,6 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "This project was developed by [Team: Tech Titans] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nChristian Ortmann: 1st Year, Data Science MS, Researcher in the School of Mining and Mineral Resources\nRoxana Akbarsharifi: 2nd Year, Electrical and Computer Engineeing MS, Gradute Research Assistant\nTeam member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\nTeam member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\nTeam member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\nShashank Yadav: 2nd Year, PhD Student, Biomedical Engineering."
-  },
-  {
-    "objectID": "presentation.html#insight",
-    "href": "presentation.html#insight",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Insight",
-    "text": "Insight\n\nAll 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period\nEach company’s share price dropped by at least 15%\nApple (AAPL) is the most popular stock based on trading volume\n\nQuestion-2 Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market"
+    "text": "This project was developed by [Team: Tech Titans] For INFO 523 - Data Mining and Discovery at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\nChristian Ortmann: 1st Year, Data Science MS, Researcher in the School of Mining and Mineral Resources\nRoxana Akbarsharifi: 2nd Year, Electrical and Computer Engineeing MS, Gradute Research Assistant\nGorantla Sai Laasya : 1st Year,Information Science MS.\nAbhishek Kumar: 1st Year, MS Data Science, Researcher, VIP project: Road Safety\nTeam member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\nShashank Yadav: 2nd Year, PhD Student, Biomedical Engineering."
   }
 ]
