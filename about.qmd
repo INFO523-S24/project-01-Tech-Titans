@@ -11,10 +11,9 @@ This project was developed by **\[Team: Tech Titans\]** For [INFO 523 - Data Min
 
 -   Roxana Akbarsharifi: 2nd Year, Electrical and Computer Engineeing MS, Gradute Research Assistant
 
--  Gorantla Sai Laasya : 1st Year,
-Information Science MS.
+-  Gorantla Sai Laasya : 1st Year,Information Science MS.
 
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
+-    Abhishek Kumar: 1st Year, MS Data Science, Researcher, VIP project: Road Safety
 
 -   Team member 5: One sentence description of Team member 4 (e.g., year, major, etc.).
 
