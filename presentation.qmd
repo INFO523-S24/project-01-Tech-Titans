@@ -1,7 +1,7 @@
 ---
 title: "Analysis of Big Tech Stock Prices"
 subtitle: "INFO 523 - Spring 2023 - Project 1"
-author: "Christian Ortmann, Roxana Akbarsharifi, Abhishek Kumar, Shashank Yadav, Gorantla Sai Laasya, Divya Liladhar Dhole"
+author: "Tech Titans: Christian Ortmann, Roxana Akbarsharifi, Abhishek Kumar, Shashank Yadav, Gorantla Sai Laasya, Divya Liladhar Dhole"
 title-slide-attributes:
   data-background-image: images/stock_market.jpeg
   data-background-size: stretch
@@ -189,12 +189,11 @@ fig.show()
 ```
 
 
-
-## Analysis {.smaller}
+## Analysis {style="font-size: 60%"}
 
 ::: {layout-ncol=2}
 
-<div style="font-size: 30%">
+<div>
 | Company | %CAGR |
 | ------- | ----- |
 | TSLA    | 41.51 |
@@ -213,7 +212,7 @@ fig.show()
 | IBM     | 0.83  |
 </div>
 
-<div style="font-size: 30%">
+<div>
 | Company | Correction  %        |
 |---------|---------------------|
 | IBM     | -56.08%  |
@@ -234,7 +233,7 @@ fig.show()
 
 :::
 
-## Insight 
+## Insights
 
  - All 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period
  - Each company's share price dropped by at least 15%
@@ -242,7 +241,7 @@ fig.show()
 
 
 
-### Question-2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market {.smaller}
+## Question-2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market {style="font-size: 50%"}
 
 ::: columns
 ::: {.column width="50%"}
@@ -371,17 +370,16 @@ fig.show()
 
 ## Conclusion
 ::: {.fragment .fade-in}
-- Out of 14 companies,5 companies(TSLA,NFLX,NVDA,AAPL,AMZN) annual return rate is greater than 20% .
+- Out of 14 companies, 5 companies (TSLA, NFLX, NVDA, AAPL, AMZN) annual return rate is greater than 20%
 :::
 ::: {.fragment .fade-in}
-SMA can suggest the movement of stock prices
+- SMA can suggest the movement of stock prices
 :::
 ::: {.fragment .fade-in}
-Apple's(AAPL) stock price trade volume is greater than 150 percent more than the most popular stock trade of Tesla (TSLA) 
+- Apple's (AAPL) stock price trade volume is greater than 150 percent more than the most popular stock trade of Tesla (TSLA) 
 :::
 
 
 
 
-## Thank You!
-
+## Thank You!{style="text-align: center; font-size: 150%"}
