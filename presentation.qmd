@@ -48,11 +48,18 @@ plt.rcParams['figure.figsize'] = (6, 6 * 0.618)
 ```
 
 ## Introducing the Dataset
-
+::: {.fragment .fade-in}
 - Data was sourced from Tidy Tuesday, which pulled from Kaggle
+:::
+::: {.fragment .fade-in}
 - Dataset consists of 14 Big Tech stocks and their respective economic metrics from 2010 to 2022
+:::
+::: {.fragment .fade-in}
 - Contains some missing data points where companies were listed after 2010
+:::
+::: {.fragment .fade-in}
 - Motivated to make low risk financial decision by analyzing past stock market trends
+:::
 
 ## Question 1: How do stock prices change over time based on basic economic metrics {.smaller}
 ```{python}
