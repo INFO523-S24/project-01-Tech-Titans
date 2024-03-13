@@ -49,34 +49,141 @@ plt.rcParams['figure.figsize'] = (6, 6 * 0.618)
 
 ## Introducing the Dataset
 
--   The presentation is created using the Quarto CLI
+- Data was sourced from Tidy Tuesday, which pulled from Kaggle
+- Dataset consists of 14 Big Tech stocks and their respective economic metrics from 2010 to 2022
+- Contains some missing data points where companies were listed after 2010
+- Motivated to make low risk financial decision by analyzing past stock market trends
 
--   `##` sets the start of a new slide
+## Question 1: How do stock prices change over time based on basic economic metrics
+```{python}
+# Importing the required libraries
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.graph_objects as go
+from scipy import stats
 
-## Question 1: 
+# Loading Data
+stocks = pd.read_csv('data/big_tech_stock_prices.csv')
+companies = pd.read_csv('data/big_tech_companies.csv')
 
-You can use plain text
+# Step 1: Exploratory Data Analysis (EDA)
+df = stocks.copy()
 
-::: columns
-::: {.column width="40%"}
--   or bullet points[^1]
-:::
+# Convert the date column to datetime format
+df['date'] = pd.to_datetime(df['date'])
 
-::: {.column width="60%"}
-or in two columns
-:::
-:::
+# Summary Statistics
+company_stats = df.groupby('stock_symbol').agg({'open': ['mean', 'median', 'min', 'max', 'std'], 'volume': ['mean', 'median', 'min', 'max', 'std']})
 
-[^1]: And add footnotes
+# Initialize an empty list to store candlestick traces for all companies
+candlestick_traces = []
 
--   like
+# Loop through each company and create a candlestick trace
+for company in stocks['stock_symbol'].unique():
+    df_company = stocks[stocks['stock_symbol'] == company]
+    candlestick_trace = go.Candlestick(x=df_company['date'],
+                                       open=df_company['open'],
+                                       high=df_company['high'],
+                                       low=df_company['low'],
+                                       close=df_company['close'],
+                                       name=f"{company} Candlestick")
+    candlestick_traces.append(candlestick_trace)
 
--   this
+# Create the figure
+fig = go.Figure(data=candlestick_traces)
 
-## Candle Stick Plot
+# Customize the layout
+fig.update_layout(title='Stock Prices of Big Tech Stocks (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023</sup>',
+                  xaxis_title='Date',
+                  yaxis_title='Price',
+                  xaxis_rangeslider_visible=False,
+                  width=1000,
+                  margin=dict(l=40, r=40, t=60, b=20)
+                  )
+
+# Show the figure
+fig.show()
 
 
-## Line Plot and Bar Plot
+
+
+
+
+
+
+
+
+
+
+
+```
+
+## Line Plot
+``` {python}
+
+stocks = companies['stock_symbol'].values.tolist()
+# Creating a DataFrame to hold all the stock data
+# For simplicity, let's generate some random closing prices
+all_stock_data = df
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add a line for each stock
+for stock in stocks:
+    stock_data = df[df['stock_symbol'] == stock]
+    fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['close'], mode='lines', name=stock))
+
+# Customize the layout
+fig.update_layout(
+    title='Stock Close Prices Over Time (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023</sup>',
+    xaxis_title='Date',
+    yaxis_title='Close Price',
+    height=600,
+    margin=dict(l=40, r=40, t=60, b=20)
+)
+
+# Show the figure
+
+fig.show()
+```
+
+
+
+
+## Bar Plot
+
+``` {python}
+# Calculate average volume traded for each stock symbol
+avg_volume = df.groupby('stock_symbol')['volume'].mean().sort_values()
+
+# Create a bar trace
+bar_trace = go.Bar(
+    x=avg_volume.index,  # Stock symbols
+    y=avg_volume.values,  # Average volume
+    marker_color='skyblue'
+)
+
+# Create a layout
+layout = go.Layout(
+    title='Average Volume Traded per Year for Each Stock Symbol <br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023</sup>',
+    xaxis=dict(title='Stock Symbol'),
+    yaxis=dict(title='Average Volume (Shares Traded)'),
+    xaxis_tickangle=-45,
+    margin=dict(l=40, r=40, t=60, b=20)
+)
+
+# Create a figure
+fig = go.Figure(data=[bar_trace], layout=layout)
+
+# Show the figure
+fig.show()
+
+```
+
+
 
 ## Insights
 
@@ -95,6 +202,22 @@ or in two columns
 
 
 ## Code
+
+::: columns
+::: {.column width="40%"}
+-   or bullet points[^1]
+:::
+
+::: {.column width="60%"}
+or in two columns
+:::
+:::
+
+[^1]: And add footnotes
+
+-   like
+
+-   this
 
 ```{python}
 from sklearn.linear_model import LinearRegression
