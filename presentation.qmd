@@ -195,6 +195,133 @@ fig.show()
 
 ## Question 2:
 
+### Question-2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market {.smaller}
+
+::: columns
+::: {.column width="50%"}
+```{python}
+stocks = pd.read_csv('data/big_tech_stock_prices.csv')
+companies = pd.read_csv('data/big_tech_companies.csv')
+
+# Copy the DataFrames to avoid modifying the original data
+df_stocks = stocks.copy()
+df_companies = companies.copy()
+
+# Now you can proceed with your groupby aggregation
+investment_stats = df_stocks.groupby('stock_symbol').agg({
+    'open': ['mean', 'median', 'min', 'max', 'std'],
+    'high': ['mean', 'median', 'min', 'max', 'std'],
+    'low': ['mean', 'median', 'min', 'max', 'std'],
+    'close': ['mean', 'median', 'min', 'max', 'std'],
+    'adj_close': ['mean', 'median', 'min', 'max', 'std'],
+    'volume': ['mean', 'median', 'min', 'max', 'std']
+})
+
+# Calculate the Z-score for the 'adj_close' column
+df_stocks['z_score'] = stats.zscore(df_stocks['adj_close'])
+# Remove outliers beyond 3 standard deviations
+df_stocks = df_stocks[df_stocks['z_score'].abs() <= 3]
+
+
+#Stock-Close-Prices-Over-Time
+stocks = companies['stock_symbol'].values.tolist()
+
+# Creating a DataFrame to hold all the stock data
+all_stock_data = df_stocks
+
+
+
+#Normalized-Stock-Close-Prices
+start_date = "2010-01-01"
+filtered_data = all_stock_data[all_stock_data['date'] >= start_date]
+
+# Normalize each stock's prices to start from a base (e.g., 100)
+base = 10
+for stock in stocks:
+    initial_price = filtered_data[filtered_data['stock_symbol'] == stock].iloc[0]['close']
+    filtered_data.loc[filtered_data['stock_symbol'] == stock, 'Normalized Close'] = base * (filtered_data['close'] / initial_price)
+
+# Create a Plotly figure
+fig = go.Figure()
+
+# Add a line for each stock's normalized close prices
+for stock in stocks:
+    stock_data = filtered_data[filtered_data['stock_symbol'] == stock]
+    fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['Normalized Close'], mode='lines', name=stock))
+
+# Customize the layout
+fig.update_layout(
+    title='Normalized Stock Close Prices Over Time',
+    xaxis_title='Date',
+    yaxis_title='Normalized Close Price',
+    height=600
+)
+
+# Show the figure
+fig.show()
+
+```
+
+:::
+
+::: {.column width="50%"}
+```{python}
+#Data-Visualization-Q2-Part2
+
+df_AAPL = df_stocks[df_stocks['stock_symbol'] == 'AAPL']
+
+start_date = "2013-01-01"
+df_AAPL = df_AAPL[df_AAPL['date'] >= start_date]
+
+# Calculate 200DMA and 50DMA
+df_AAPL['200DMA'] = df_AAPL['close'].rolling(window=200).mean()
+df_AAPL['50DMA'] = df_AAPL['close'].rolling(window=50).mean()
+
+# Creating the candlestick chart
+fig = go.Figure()
+
+# Add Candlestick trace
+fig.add_trace(go.Candlestick(x=df_AAPL['date'],
+                open=df_AAPL['open'], high=df_AAPL['high'],
+                low=df_AAPL['low'], close=df_AAPL['close'],
+                name='Candlestick'))
+
+# Add 200DMA Line trace
+fig.add_trace(go.Scatter(x=df_AAPL['date'], y=df_AAPL['200DMA'],
+                         mode='lines', name='200DMA',
+                         line=dict(color='blue', width=2)))
+
+# Add 50DMA Line trace
+fig.add_trace(go.Scatter(x=df_AAPL['date'], y=df_AAPL['50DMA'],
+                         mode='lines', name='50DMA',
+                         line=dict(color='red', width=2)))
+
+# Customize the layout
+fig.update_layout(title='Stock Price with 200DMA and 50DMA',
+                  xaxis_title='Date',
+                  yaxis_title='Price',
+                  xaxis_rangeslider_visible=False,  # Hides the range slider
+                  height=600)
+
+# Show the figure
+fig.show()
+```
+
+:::
+:::
+
+
+
+## Insights
+
+- We observed that Tesla's stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.
+
+- The 50-DMA of the stock price consistently exceeds the 200-DMA.
+
+- Considering the Netflix 
+
+
+
 ## Normalized Stock Price over Time
 
 ## 50, 200 Day Moving Averages 

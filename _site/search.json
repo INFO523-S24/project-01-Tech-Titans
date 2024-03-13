@@ -81,7 +81,7 @@
     "href": "presentation.html#introducing-the-dataset",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Introducing the Dataset",
-    "text": "Introducing the Dataset\n\nData was sourced from Tidy Tuesday, which pulled from Kaggle\nDataset consists of 14 Big Tech stocks and their respective economic metrics from 2010 to 2022\nContains some missing data points where companies were listed after 2010\nMotivated to make low risk financial decision by analyzing past stock market trends"
+    "text": "Introducing the Dataset\n\n\nData was sourced from Tidy Tuesday, which pulled from Kaggle\n\n\n\n\nDataset consists of 14 Big Tech stocks and their respective economic metrics from 2010 to 2022\n\n\n\n\nContains some missing data points where companies were listed after 2010\n\n\n\n\nMotivated to make low risk financial decision by analyzing past stock market trends"
   },
   {
     "objectID": "presentation.html#question-1-how-do-stock-prices-change-over-time-based-on-basic-economic-metrics",
@@ -109,7 +109,7 @@
     "href": "presentation.html#question-2",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Question 2:",
-    "text": "Question 2:"
+    "text": "Question 2:\nQuestion-2 Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market"
   },
   {
     "objectID": "presentation.html#normalized-stock-price-over-time",
@@ -130,7 +130,7 @@
     "href": "presentation.html#insights-1",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Insights",
-    "text": "Insights"
+    "text": "Insights\n\nWe observed that Tesla’s stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.\nThe 50-DMA of the stock price consistently exceeds the 200-DMA.\nConsidering the Netflix"
   },
   {
     "objectID": "presentation.html#conclusion",
@@ -215,5 +215,12 @@
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Bar Plot",
     "text": "Bar Plot"
+  },
+  {
+    "objectID": "presentation.html#insights-2",
+    "href": "presentation.html#insights-2",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Insights",
+    "text": "Insights"
   }
 ]
