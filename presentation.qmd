@@ -369,7 +369,7 @@ fig.show()
 
 ## Insights
 ::: {.fragment .fade-in}
-- The Tesla's stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.
+- From January 2012 to January 2022, Tesla's stock price experienced significant growth, increasing by a factor of 10 when normalized. At the beginning of this period, in January 2012, the stock price stood at 11.25, while by January 2022, it had surged to 2,412."
 :::
 ::: {.fragment .fade-in}
 - Whenever the 50-day moving average (DMA) crosses above the 200-day moving average (DMA) during an uptrend, the stock rises, and when the 50 DMA crosses below the 200 DMA during a downtrend, the stock declines.
