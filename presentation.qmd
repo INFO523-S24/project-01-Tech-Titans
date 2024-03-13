@@ -234,10 +234,15 @@ fig.show()
 :::
 
 ## Insights
-
- - All 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period
- - Each company's share price dropped by at least 15%
- - Apple (AAPL) is the most popular stock based on trading volume
+::: {.fragment .fade-in}
+- All 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period
+:::
+::: {.fragment .fade-in}
+- Each company's share price dropped by at least 15%
+:::
+::: {.fragment .fade-in}
+- Apple (AAPL) is the most popular stock based on trading volume
+:::
 
 
 
@@ -359,12 +364,17 @@ fig.show()
 
 
 ## Insights
-
+::: {.fragment .fade-in}
 - The Tesla's stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.
-
+:::
+::: {.fragment .fade-in}
 - The 50-DMA of the stock price consistently exceeds the 200-DMA.
+:::
 
+::: {.fragment .fade-in}
 - The Netflix is another example where 200-DMA stock price is more than 50-DMA.
+:::
+
 
 
 
