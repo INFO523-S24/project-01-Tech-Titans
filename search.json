@@ -81,7 +81,7 @@
     "href": "presentation.html#introducing-the-dataset",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Introducing the Dataset",
-    "text": "Introducing the Dataset\n\nData was sourced from Tidy Tuesday, which pulled from Kaggle\nDataset consists of 14 Big Tech stocks and their respective economic metrics from 2010 to 2022\nContains some missing data points where companies were listed after 2010\nMotivated to make low risk financial decision by analyzing past stock market trends"
+    "text": "Introducing the Dataset\n\n\nData was sourced from Tidy Tuesday, which pulled from Kaggle\n\n\n\n\nDataset consists of 14 Big Tech stocks and their respective economic metrics from 2010 to 2022\n\n\n\n\nContains some missing data points where companies were listed after 2010\n\n\n\n\nMotivated to make low risk financial decision by analyzing past stock market trends"
   },
   {
     "objectID": "presentation.html#question-1-how-do-stock-prices-change-over-time-based-on-basic-economic-metrics",
@@ -98,11 +98,18 @@
     "text": "Line Plot and Bar Plot"
   },
   {
-    "objectID": "presentation.html#insights",
-    "href": "presentation.html#insights",
+    "objectID": "presentation.html#analysis",
+    "href": "presentation.html#analysis",
     "title": "Analysis of Big Tech Stock Prices",
-    "section": "Insights",
-    "text": "Insights"
+    "section": "Analysis",
+    "text": "Analysis\n\n\n\n\n\n\nCompany\n%CAGR\n\n\n\n\nTSLA\n41.51\n\n\nNFLX\n32.37\n\n\nNVDA\n30.47\n\n\nAAPL\n24.36\n\n\nAMZN\n21.53\n\n\nADBE\n18.54\n\n\nMSFT\n17.13\n\n\nCRM\n16.28\n\n\nGOOGL\n14.25\n\n\nMETA\n13.15\n\n\nORCL\n9.57\n\n\nCSCO\n5.17\n\n\nINTC\n1.77\n\n\nIBM\n0.83\n\n\n\n\n\n\n\n\nCompany\nCorrection %\n\n\n\n\nIBM\n-56.08%\n\n\nTSLA\n-44.47%\n\n\nCSCO\n-42.80%\n\n\nINTC\n-34.84%\n\n\nMETA\n-34.59%\n\n\nORCL\n-33.83%\n\n\nCRM\n-33.05 %\n\n\nNVDA\n-32.12 %\n\n\nAAPL\n-30.82%\n\n\nGOOGL\n-28.99%\n\n\nNFLX\n-28.67%\n\n\nMSFT\n-21.62%\n\n\nADBE\n-20.10%\n\n\nAMZN\n-17.79%"
+  },
+  {
+    "objectID": "presentation.html#insight",
+    "href": "presentation.html#insight",
+    "title": "Analysis of Big Tech Stock Prices",
+    "section": "Insight",
+    "text": "Insight\n\nAll 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period\nAll companies were able to recover from COVID-19 dip\nApple (AAPL) is the most popular stock based on trading volume"
   },
   {
     "objectID": "presentation.html#question-2",
@@ -126,8 +133,8 @@
     "text": "50, 200 Day Moving Averages"
   },
   {
-    "objectID": "presentation.html#insights-1",
-    "href": "presentation.html#insights-1",
+    "objectID": "presentation.html#insights",
+    "href": "presentation.html#insights",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Insights",
     "text": "Insights"
@@ -145,55 +152,6 @@
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Thank You!",
     "text": "Thank You!"
-  },
-  {
-    "objectID": "presentation.html#code",
-    "href": "presentation.html#code",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Code",
-    "text": "Code\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
-  },
-  {
-    "objectID": "presentation.html#plots",
-    "href": "presentation.html#plots",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Plots",
-    "text": "Plots"
-  },
-  {
-    "objectID": "presentation.html#plot-and-text",
-    "href": "presentation.html#plot-and-text",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Plot and text",
-    "text": "Plot and text\n\n\n\nSome text\ngoes here"
-  },
-  {
-    "objectID": "presentation.html#tables",
-    "href": "presentation.html#tables",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Tables",
-    "text": "Tables\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,"
-  },
-  {
-    "objectID": "presentation.html#images",
-    "href": "presentation.html#images",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Images",
-    "text": "Images\n\nImage credit: Danielle Navarro, Percolate."
-  },
-  {
-    "objectID": "presentation.html#math-expressions",
-    "href": "presentation.html#math-expressions",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Math Expressions",
-    "text": "Math Expressions\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#feeling-adventurous",
-    "href": "presentation.html#feeling-adventurous",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Feeling adventurous?",
-    "text": "Feeling adventurous?\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
   },
   {
     "objectID": "about.html",
