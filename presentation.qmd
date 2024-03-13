@@ -193,7 +193,7 @@ fig.show()
 ## Insights
 
 
-## Question 2:
+
 
 ### Question-2  Backwards verification: if we invested x amount of dollars in 2010, how much would it be worth in 2022, when would be a good/bad time to pull investment out of the market {.smaller}
 
@@ -314,19 +314,13 @@ fig.show()
 
 ## Insights
 
-- We observed that Tesla's stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.
+- The Tesla's stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.
 
 - The 50-DMA of the stock price consistently exceeds the 200-DMA.
 
-- Considering the Netflix 
+- The Netflix is another example where 200-DMA stock price is more than 50-DMA.
 
 
-
-## Normalized Stock Price over Time
-
-## 50, 200 Day Moving Averages 
-
-## Insights
 
 ## Conclusion
 
