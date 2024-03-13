@@ -323,6 +323,18 @@ fig.show()
 
 
 ## Conclusion
+::: {.fragment .fade-in}
+- Out of 14 companies,5 companies(TSLA,NFLX,NVDA,AAPL,AMZN) annual return rate is greater than 20% .
+:::
+::: {.fragment .fade-in}
+SMA can suggest the movement of stock prices
+:::
+::: {.fragment .fade-in}
+Apple's(AAPL) stock price trade volume is greater than 150 percent more than the most popular stock trade of Tesla (TSLA) 
+:::
+
+
+
 
 ## Thank You!
 
