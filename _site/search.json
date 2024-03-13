@@ -109,7 +109,7 @@
     "href": "presentation.html#insights",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Insights",
-    "text": "Insights\n\n\nAll 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period\n\n\n\n\nEach company’s share price dropped by at least 15%\n\n\n\n\nApple (AAPL) is the most popular stock based on trading volume"
+    "text": "Insights\n\n\nAll 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period\n\n\n\n\nEach company’s share price dropped by at least 15% during the COVID-19 pandemic, though some companies dropped more than others\n\n\n\n\nApple (AAPL) is the most popular stock based on trading volume"
   },
   {
     "objectID": "presentation.html#question-2-backwards-verification-if-we-invested-x-amount-of-dollars-in-2010-how-much-would-it-be-worth-in-2022-when-would-be-a-goodbad-time-to-pull-investment-out-of-the-market",
@@ -123,7 +123,7 @@
     "href": "presentation.html#insights-1",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Insights",
-    "text": "Insights\n\n\nFrom January 2012 to January 2022, Tesla’s stock price experienced significant growth, increasing by a factor of 10 when normalized. At the beginning of this period, in January 2012, the stock price stood at 11.25, while by January 2022, it had surged to 2,412.”\n\n\n\n\nWhenever the 50-day moving average (DMA) crosses above the 200-day moving average (DMA) during an uptrend, the stock rises, and when the 50 DMA crosses below the 200 DMA during a downtrend, the stock declines.\n\n\n\n\nThe Netflix is another example where 200-DMA stock price is more than 50-DMA."
+    "text": "Insights\n\n\nFrom Jan 2012 to Jan 2022, Tesla’s stock price experienced significant growth, increasing by a factor of 20. At the beginning of this period, in Jan 2012, the stock price stood at 11.25, while by Jan 2022, it had surged to 2,412.\n\n\n\n\nWhenever the 50-day moving average (DMA) crosses above the 200-day moving average (DMA) during an uptrend, the stock rises, and when the 50 DMA crosses below the 200 DMA during a downtrend, the stock declines.\n\n\n\n\nThe Netflix is another example where 200-DMA crossovers 50-DMA, where downtrend is observed."
   },
   {
     "objectID": "presentation.html#conclusion",
@@ -131,13 +131,6 @@
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Conclusion",
     "text": "Conclusion\n\n\nOut of 14 companies, 5 companies (TSLA, NFLX, NVDA, AAPL, AMZN) annual return rate is greater than 20%\n\n\n\n\nSMA can suggest the movement of stock prices\n\n\n\n\nApple’s (AAPL) stock price trade volume is greater than 150 percent more than the most popular stock trade of Tesla (TSLA)"
-  },
-  {
-    "objectID": "presentation.html#thank-you",
-    "href": "presentation.html#thank-you",
-    "title": "Analysis of Big Tech Stock Prices",
-    "section": "Thank You!",
-    "text": "Thank You!"
   },
   {
     "objectID": "about.html",
