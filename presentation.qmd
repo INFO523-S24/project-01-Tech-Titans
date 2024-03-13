@@ -5,7 +5,7 @@ author: "Christian Ortmann, Roxana Akbarsharifi, Abhishek Kumar, Shashank Yadav,
 title-slide-attributes:
   data-background-image: images/stock_market.jpeg
   data-background-size: stretch
-  data-background-opacity: "0.5"
+  data-background-opacity: "0.4"
   data-slide-number: none
 format:
   revealjs:
@@ -190,8 +190,55 @@ fig.show()
 
 
 
-## Insights
+## Analysis {.smaller}
 
+::: {layout-ncol=2}
+
+<div style="font-size: 30%">
+| Company | %CAGR |
+| ------- | ----- |
+| TSLA    | 41.51 |
+| NFLX    | 32.37 |
+| NVDA    | 30.47 |
+| AAPL    | 24.36 |
+| AMZN    | 21.53 |
+| ADBE    | 18.54 |
+| MSFT    | 17.13 |
+| CRM     | 16.28 |
+| GOOGL   | 14.25 |
+| META    | 13.15 |
+| ORCL    | 9.57  |
+| CSCO    | 5.17  |
+| INTC    | 1.77  |
+| IBM     | 0.83  |
+</div>
+
+<div style="font-size: 30%">
+| Company | Correction  %        |
+|---------|---------------------|
+| IBM     | -56.08%  |
+| TSLA    | -44.47%  |
+| CSCO    | -42.80% |
+| INTC    | -34.84% |
+| META    | -34.59% |
+| ORCL    | -33.83% |
+| CRM     | -33.05 % |
+| NVDA    | -32.12 % |
+| AAPL    | -30.82% |
+| GOOGL   | -28.99% |
+| NFLX    | -28.67% |
+| MSFT    | -21.62% |
+| ADBE    | -20.10% |
+| AMZN    | -17.79%  |
+</div>
+
+:::
+
+## Insight 
+
+ - All 14 stocks have a positive CAGR (compounded annual growth rate) over the twelve year period
+ - Each company's share price dropped by at least 15%
+ - Apple (AAPL) is the most popular stock based on trading volume
 
 
 
