@@ -9,11 +9,15 @@ title-slide-attributes:
   data-slide-number: none
 format:
   revealjs:
+    transition: convex
     theme:  ['data/customtheming.scss']
+    auto-animate-duration: 1.5
 editor: visual
 jupyter: python3
 execute:
   echo: false
+editor_options: 
+  chunk_output_type: console 
 ---
 
 ```{python}
@@ -369,12 +373,11 @@ fig.show()
 
 ## Insights
 ::: {.fragment .fade-in}
-- From January 2012 to January 2022, Tesla's stock price experienced significant growth, increasing by a factor of 10 when normalized. At the beginning of this period, in January 2012, the stock price stood at 11.25, while by January 2022, it had surged to 2,412."
+- The Tesla's stock price experienced significant growth from 2012 to 2022, increasing by a factor of 10 during that period when normalized to a particular reference point.
 :::
 ::: {.fragment .fade-in}
 - Whenever the 50-day moving average (DMA) crosses above the 200-day moving average (DMA) during an uptrend, the stock rises, and when the 50 DMA crosses below the 200 DMA during a downtrend, the stock declines.
 :::
-
 ::: {.fragment .fade-in}
 - The Netflix is another example where 200-DMA stock price is more than 50-DMA.
 :::
@@ -393,7 +396,7 @@ fig.show()
 - Apple's (AAPL) stock price trade volume is greater than 150 percent more than the most popular stock trade of Tesla (TSLA) 
 :::
 
-
-
-
-## Thank You!{style="text-align: center; font-size: 150%"}
+#
+<div style="text-align: center;">
+  <p style="font-size: 200%;">Thank You!</p>
+</div>
