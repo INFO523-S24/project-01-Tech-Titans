@@ -62,6 +62,7 @@ plt.rcParams['figure.figsize'] = (6, 6 * 0.618)
 :::
 
 ## Question 1: How do stock prices change over time based on basic economic metrics {.smaller}
+::: {.fragment .fade-in}
 ```{python}
 # Importing the required libraries
 import numpy as np
@@ -126,8 +127,10 @@ fig.show()
 
 
 ```
+:::
 
 ## Line Plot and Bar Plot
+::: {.fragment .fade-in}
 ``` {python}
 
 stocks = companies['stock_symbol'].values.tolist()
@@ -158,7 +161,8 @@ fig.update_layout(
 
 fig.show()
 ```
-
+:::
+::: {.fragment .fade-in}
 ``` {python}
 # Calculate average volume traded for each stock symbol
 avg_volume = df.groupby('stock_symbol')['volume'].mean().sort_values()
@@ -187,7 +191,7 @@ fig = go.Figure(data=[bar_trace], layout=layout)
 fig.show()
 
 ```
-
+:::
 
 ## Analysis {style="font-size: 60%"}
 
