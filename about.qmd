@@ -9,7 +9,7 @@ This project was developed by **\[Team: Tech Titans\]** For [INFO 523 - Data Min
 
 -   Christian Ortmann: 1st Year, Data Science MS, Researcher in the School of Mining and Mineral Resources
 
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
+-   Roxana Akbarsharifi: 2nd Year, Electrical and Computer Engineeing MS, Gradute Research Assistant
 
 -   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
 
