@@ -379,7 +379,7 @@ fig.show()
 - Whenever the 50-day moving average (DMA) crosses above the 200-day moving average (DMA) during an uptrend, the stock rises, and when the 50 DMA crosses below the 200 DMA during a downtrend, the stock declines.
 :::
 ::: {.fragment .fade-in}
-- The Netflix is another example where 200-DMA stock price is more than 50-DMA.
+- The Netflix is another example where 200-DMA crossovers 50-DMA, where downtrend is observed.
 :::
 
 
