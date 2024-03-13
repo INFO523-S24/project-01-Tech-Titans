@@ -54,7 +54,7 @@ plt.rcParams['figure.figsize'] = (6, 6 * 0.618)
 - Contains some missing data points where companies were listed after 2010
 - Motivated to make low risk financial decision by analyzing past stock market trends
 
-## Question 1: How do stock prices change over time based on basic economic metrics
+## Question 1: How do stock prices change over time based on basic economic metrics {.smaller}
 ```{python}
 # Importing the required libraries
 import numpy as np
@@ -120,7 +120,7 @@ fig.show()
 
 ```
 
-## Line Plot
+## Line Plot and Bar Plot
 ``` {python}
 
 stocks = companies['stock_symbol'].values.tolist()
@@ -131,8 +131,10 @@ all_stock_data = df
 # Create a Plotly figure
 fig = go.Figure()
 
+slide_stocks = ['AAPL', 'ADBE', 'AMZN', 'IBM']
+
 # Add a line for each stock
-for stock in stocks:
+for stock in slide_stocks:
     stock_data = df[df['stock_symbol'] == stock]
     fig.add_trace(go.Scatter(x=stock_data['date'], y=stock_data['close'], mode='lines', name=stock))
 
@@ -141,7 +143,7 @@ fig.update_layout(
     title='Stock Close Prices Over Time (2010 - 2022)<br><sup>Kaggle via Yahoo Finance | Tidy Tuesday 2023</sup>',
     xaxis_title='Date',
     yaxis_title='Close Price',
-    height=600,
+    height=300,
     margin=dict(l=40, r=40, t=60, b=20)
 )
 
@@ -149,11 +151,6 @@ fig.update_layout(
 
 fig.show()
 ```
-
-
-
-
-## Bar Plot
 
 ``` {python}
 # Calculate average volume traded for each stock symbol
@@ -172,6 +169,7 @@ layout = go.Layout(
     xaxis=dict(title='Stock Symbol'),
     yaxis=dict(title='Average Volume (Shares Traded)'),
     xaxis_tickangle=-45,
+    height = 300,
     margin=dict(l=40, r=40, t=60, b=20)
 )
 
