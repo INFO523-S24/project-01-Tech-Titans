@@ -1,10 +1,10 @@
 {
-  "hash": "431d76d50a3a6cb45beac63c305fc3ee",
+  "hash": "af99b4444a9639f4acb2df5ce255d309",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: About\nformat: html\neditor: visual\n---\n\nThis project was developed by **\\[Team: Tech Titans\\]** For [INFO 523 - Data Mining and Discovery](https://datamineaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\n-   Christian Ortmann: 1st Year, Data Science MS, Researcher in the School of Mining and Mineral Resources\n\n-   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).\n\n-   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\n\n-   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\n\n-   Team member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\n\n-   Shashank Yadav: 2nd Year, PhD Student, Biomedical Engineering.\n\n",
+    "markdown": "---\ntitle: About\nformat: html\neditor: visual\n---\n\nThis project was developed by **\\[Team: Tech Titans\\]** For [INFO 523 - Data Mining and Discovery](https://datamineaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.\n\n-   Christian Ortmann: 1st Year, Data Science MS, Researcher in the School of Mining and Mineral Resources\n\n-   Roxana Akbarsharifi: 2nd Year, Electrical and Computer Engineeing MS, Gradute Research Assistant\n\n-   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).\n\n-   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).\n\n-   Team member 5: One sentence description of Team member 4 (e.g., year, major, etc.).\n\n-   Shashank Yadav: 2nd Year, PhD Student, Biomedical Engineering.\n\n",
     "supporting": [
-      "about_files"
+      "about_files/figure-html"
     ],
     "filters": [],
     "includes": {}

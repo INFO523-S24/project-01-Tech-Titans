@@ -131,7 +131,7 @@ all_stock_data = df
 # Create a Plotly figure
 fig = go.Figure()
 
-slide_stocks = ['AAPL', 'ADBE', 'AMZN', 'IBM']
+slide_stocks = ['AAPL', 'ADBE', 'AMZN', 'NFLX', 'TSLA']
 
 # Add a line for each stock
 for stock in slide_stocks:
