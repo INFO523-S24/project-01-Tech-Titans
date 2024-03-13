@@ -81,28 +81,28 @@
     "href": "presentation.html#introducing-the-dataset",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Introducing the Dataset",
-    "text": "Introducing the Dataset\n\nThe presentation is created using the Quarto CLI\n## sets the start of a new slide"
+    "text": "Introducing the Dataset\n\nData was sourced from Tidy Tuesday, which pulled from Kaggle\nDataset consists of 14 Big Tech stocks and their respective economic metrics from 2010 to 2022\nContains some missing data points where companies were listed after 2010\nMotivated to make low risk financial decision by analyzing past stock market trends"
   },
   {
-    "objectID": "presentation.html#question-1",
-    "href": "presentation.html#question-1",
+    "objectID": "presentation.html#question-1-how-do-stock-prices-change-over-time-based-on-basic-economic-metrics",
+    "href": "presentation.html#question-1-how-do-stock-prices-change-over-time-based-on-basic-economic-metrics",
     "title": "Analysis of Big Tech Stock Prices",
-    "section": "Question 1:",
-    "text": "Question 1:\nYou can use plain text\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
+    "section": "Question 1: How do stock prices change over time based on basic economic metrics",
+    "text": "Question 1: How do stock prices change over time based on basic economic metrics"
   },
   {
-    "objectID": "presentation.html#candle-stick-plot",
-    "href": "presentation.html#candle-stick-plot",
+    "objectID": "presentation.html#line-plot",
+    "href": "presentation.html#line-plot",
     "title": "Analysis of Big Tech Stock Prices",
-    "section": "Candle Stick Plot",
-    "text": "Candle Stick Plot"
+    "section": "Line Plot",
+    "text": "Line Plot"
   },
   {
-    "objectID": "presentation.html#line-plot-and-bar-plot",
-    "href": "presentation.html#line-plot-and-bar-plot",
+    "objectID": "presentation.html#bar-plot",
+    "href": "presentation.html#bar-plot",
     "title": "Analysis of Big Tech Stock Prices",
-    "section": "Line Plot and Bar Plot",
-    "text": "Line Plot and Bar Plot"
+    "section": "Bar Plot",
+    "text": "Bar Plot"
   },
   {
     "objectID": "presentation.html#insights",
@@ -158,7 +158,7 @@
     "href": "presentation.html#code",
     "title": "Analysis of Big Tech Stock Prices",
     "section": "Code",
-    "text": "Code"
+    "text": "Code\n\n\n\nor bullet points1\n\n\nor in two columns\n\n\n\nlike\nthis\n\nAnd add footnotes"
   },
   {
     "objectID": "presentation.html#plots",
