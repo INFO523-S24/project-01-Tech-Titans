@@ -369,8 +369,6 @@ fig.show()
 :::
 :::
 
-
-
 ## Insights
 ::: {.fragment .fade-in}
 - From Jan 2012 to Jan 2022, Tesla's stock price experienced significant growth, increasing by a factor of 20. At the beginning of this period, in January 2012, the stock price stood at 11.25, while by January 2022, it had surged to 2,412.
